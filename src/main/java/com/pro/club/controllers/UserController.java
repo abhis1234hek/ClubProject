@@ -34,7 +34,7 @@ import com.pro.club.entities.secB.Tplayers;
 @RequestMapping("/user")
 public class UserController 
 {
-	
+	// -----------------| Repository objects for doing CRUD with the database |-----------------
 	@Autowired
 	private UserRepository userRepository;
 	
@@ -53,6 +53,7 @@ public class UserController
 	@Autowired
 	private TPlayersRepository tPlayersRepository;
 	
+	// -----------------| Handler after successful login |-----------------
 	@GetMapping("/index")
 	public String index(Model model,Principal principal)
 	{
@@ -65,13 +66,9 @@ public class UserController
 		return "success";
 	}
 	
-	@GetMapping("/myhome")
-	@ResponseBody
-	public String myhome()
-	{
-		return "success";
-	}
-	
+	//                                        | SECTION A |
+	/*--------------------------------------------------------------------------------------------------------------------*/
+	// -----------------| Main Players CRUD |-----------------
 	@GetMapping("/viewPlayers")
 	public String viewPlayers(Model model,Principal principal)
 	{
@@ -121,7 +118,12 @@ public class UserController
 		this.playersRepository.deleteById(CPid);
 		return "redirect:/user/viewPlayers";
 	}
+	/*--------------------------------------------------------------------------------------------------------------------*/
 	
+
+	//                                        | SECTION B |
+	/*--------------------------------------------------------------------------------------------------------------------*/
+	// -----------------| Tournament CRUD |-----------------
 	@PostMapping("/saveTour")
 	public String addTour(@ModelAttribute("tournament") Tournament tournament,@RequestParam("TDomain") String TDomain,Principal principal)
 	{
@@ -147,15 +149,36 @@ public class UserController
 		return "/working/viewClubTour";
 	}
 	
-	@GetMapping("/viewTourMatches/{Tid}")
-	public String viewTourMatches(Model model,@PathVariable("Tid") Integer Tid)
+	@PostMapping("/updateTour/{Tid}")
+	public String updateTour(@ModelAttribute("tournament") Tournament tournament,@PathVariable("Tid") int Tid)
 	{
-		List<Tmatch> mats = this.tmatchRepository.getMatchByTour(Tid);
-		model.addAttribute("matches", mats);
-		model.addAttribute("tid", Tid);
-		return "/working/viewMatches";
+		Tournament tour = this.tournamentRepository.findById(Tid).orElseThrow();
+		tournament.setTmatches(tour.getTmatches());
+		this.tournamentRepository.save(tournament);
+		return "redirect:/user/viewclubtour";
 	}
 	
+	@GetMapping("/showupdatetour/{Tid}")
+	public String showupdateTour(@PathVariable("Tid") int Tid,Model model)
+	{
+		Tournament tour = this.tournamentRepository.findById(Tid).orElseThrow();
+		model.addAttribute("tour",tour);
+		return "working/updateTour";
+	}	
+	
+	@GetMapping("/deleteTour/{Tid}")
+	public String deleteTour(@PathVariable("Tid") int Tid)
+	{
+		System.out.println(Tid);
+		this.tournamentRepository.deleteById(Tid);
+		return "redirect:/user/viewclubtour";
+	}
+	/*--------------------------------------------------------------------------------------------------------------------*/
+	
+	/*||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*/
+	
+	/*--------------------------------------------------------------------------------------------------------------------*/
+	// -----------------| Match CRUD |-----------------
 	@PostMapping("/addMatch")
 	public String addMatch(@ModelAttribute("tmatch") Tmatch tmatch,@RequestParam("Tourid") int Tourid)
 	{
@@ -167,6 +190,50 @@ public class UserController
 		return "redirect:/user/viewTourMatches/"+id;
 	}
 	
+	@GetMapping("/viewTourMatches/{Tid}")
+	public String viewTourMatches(Model model,@PathVariable("Tid") Integer Tid)
+	{
+		List<Tmatch> mats = this.tmatchRepository.getMatchByTour(Tid);
+		model.addAttribute("matches", mats);
+		model.addAttribute("tid", Tid);
+		return "/working/viewMatches";
+	}
+	
+	@GetMapping("/showupdatematch/{Mid}")
+	public String showupdatematch(@PathVariable("Mid") int Mid,Model model)
+	{
+		Tmatch tmatch = this.tmatchRepository.findById(Mid).orElseThrow();
+		model.addAttribute("m",tmatch);
+		return "working/updateMatch";
+	}
+	
+	@PostMapping("/updateMatch/{Mid}")
+	public String updateMatch(@ModelAttribute("tmatch") Tmatch tmatch,@PathVariable("Mid") int Mid)
+	{
+		Tmatch tm = this.tmatchRepository.findById(Mid).orElseThrow();
+		System.out.println(tmatch);
+		tmatch.setTournament(tm.getTournament());
+		tmatch.setTplayers(tm.getTplayers());
+		this.tmatchRepository.save(tmatch);
+		int id = tmatch.getTournament().getTid();
+		return "redirect:/user/viewTourMatches/"+id;
+	}
+	
+	@RequestMapping("/deleteMatch/{Mid}")
+	public String deleteMatch(@ModelAttribute("tmatch") Tmatch tmatch,@PathVariable("Mid") int Mid)
+	{
+		Tmatch tm = this.tmatchRepository.findById(Mid).get();
+		int id = tm.getTournament().getTid();
+		tm.setTournament(null);
+		this.tmatchRepository.delete(tm);
+		return "redirect:/user/viewTourMatches/"+id;
+	}
+	/*--------------------------------------------------------------------------------------------------------------------*/
+	
+	/*||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*/
+	
+	/*--------------------------------------------------------------------------------------------------------------------*/
+	// -----------------| Tournament Players CRUD |-----------------
 	@PostMapping("/addPlayer/{Mmid}")
 	public String addPlayer(@ModelAttribute("tplayers") Tplayers tplayers,@PathVariable("Mmid") int Mmid)
 	{
@@ -215,65 +282,12 @@ public class UserController
 		this.tPlayersRepository.delete(tplay);
 		return "redirect:/user/viewTPlayers/"+id;
 	}
+	/*--------------------------------------------------------------------------------------------------------------------*/
 	
-	@PostMapping("/updateMatch/{Mid}")
-	public String updateMatch(@ModelAttribute("tmatch") Tmatch tmatch,@PathVariable("Mid") int Mid)
-	{
-		Tmatch tm = this.tmatchRepository.findById(Mid).orElseThrow();
-		System.out.println(tmatch);
-		tmatch.setTournament(tm.getTournament());
-		tmatch.setTplayers(tm.getTplayers());
-		this.tmatchRepository.save(tmatch);
-		int id = tmatch.getTournament().getTid();
-		return "redirect:/user/viewTourMatches/"+id;
-	}
+	/*||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*/
 	
-	@RequestMapping("/deleteMatch/{Mid}")
-	public String deleteMatch(@ModelAttribute("tmatch") Tmatch tmatch,@PathVariable("Mid") int Mid)
-	{
-		Tmatch tm = this.tmatchRepository.findById(Mid).get();
-		int id = tm.getTournament().getTid();
-		tm.setTournament(null);
-		this.tmatchRepository.delete(tm);
-		return "redirect:/user/viewTourMatches/"+id;
-	}
-	
-	@GetMapping("/showupdatetour/{Tid}")
-	public String showupdateTour(@PathVariable("Tid") int Tid,Model model)
-	{
-		Tournament tour = this.tournamentRepository.findById(Tid).orElseThrow();
-		model.addAttribute("tour",tour);
-		return "working/updateTour";
-	}
-	
-	@PostMapping("/updateTour/{Tid}")
-	public String updateTour(@ModelAttribute("tournament") Tournament tournament,@PathVariable("Tid") int Tid)
-	{
-		Tournament tour = this.tournamentRepository.findById(Tid).orElseThrow();
-		tournament.setTmatches(tour.getTmatches());
-		this.tournamentRepository.save(tournament);
-		return "redirect:/user/viewclubtour";
-	}
-	
-	
-	
-	@GetMapping("/showupdatematch/{Mid}")
-	public String showupdatematch(@PathVariable("Mid") int Mid,Model model)
-	{
-		Tmatch tmatch = this.tmatchRepository.findById(Mid).orElseThrow();
-		model.addAttribute("m",tmatch);
-		return "working/updateMatch";
-	}
-	
-	@GetMapping("/viewTourSponsor/{Tid}")
-	public String showaddSponsor(@PathVariable("Tid") int Tid,Model model)
-	{
-		List<Sponsor> sponsors = this.sponsorRepository.getMatchByTour(Tid);
-		model.addAttribute("Sponsors", sponsors);
-		model.addAttribute("tid", Tid);
-		return "working/viewSponsors";
-	}
-	
+	/*--------------------------------------------------------------------------------------------------------------------*/
+	// -----------------| Sponsorship CRUD |-----------------
 	@PostMapping("/addSponsor")
 	public String addSponsor(@ModelAttribute("sponsor") Sponsor sponsor,@RequestParam("Tourid") int Tid)
 	{
@@ -283,6 +297,15 @@ public class UserController
 		this.tournamentRepository.save(tournament);
 		int id = sponsor.getTournament().getTid();
 		return "redirect:/user/viewTourSponsor/"+id;
+	}
+	
+	@GetMapping("/viewTourSponsor/{Tid}")
+	public String showaddSponsor(@PathVariable("Tid") int Tid,Model model)
+	{
+		List<Sponsor> sponsors = this.sponsorRepository.getMatchByTour(Tid);
+		model.addAttribute("Sponsors", sponsors);
+		model.addAttribute("tid", Tid);
+		return "working/viewSponsors";
 	}
 	
 	@GetMapping("/showupdatesponsor/{SPid}")
@@ -304,9 +327,6 @@ public class UserController
 		return "redirect:/user/viewTourSponsor/"+id;
 	}
 	
-	
-	
-	
 	@GetMapping("/deleteSponsor/{SPid}")
 	public String deleteSponsor(@PathVariable("SPid") int SPid)
 	{
@@ -316,12 +336,10 @@ public class UserController
 		this.sponsorRepository.deleteById(SPid);
 		return "redirect:/user/viewTourSponsor/"+id;
 	}
+	/*--------------------------------------------------------------------------------------------------------------------*/
 	
-	@GetMapping("/deleteTour/{Tid}")
-	public String deleteTour(@PathVariable("Tid") int Tid)
-	{
-		System.out.println(Tid);
-		this.tournamentRepository.deleteById(Tid);
-		return "redirect:/user/viewclubtour";
-	}
+	/*||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*/
+	
+	/*--------------------------------------------------------------------------------------------------------------------*/
+	
 }

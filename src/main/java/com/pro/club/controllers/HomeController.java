@@ -24,7 +24,7 @@ import com.pro.club.entities.secA.User;
 @Controller
 public class HomeController 
 {
-	
+	// -----------------| Repository objects |-----------------
 	@Autowired
 	private BCryptPasswordEncoder passwordEncoder;
 	
@@ -34,6 +34,14 @@ public class HomeController
 	@Autowired
 	private AddressRepository addressRepository;
 	
+	// -----------------| Show Home page handler |-----------------
+	@RequestMapping("/")
+	public String home()
+	{
+		return "home";
+	}
+	
+	// -----------------| URL showing all the clubs available |-----------------
 	@GetMapping("/read")
 	@ResponseBody
 	public List<User> getclubs()
@@ -41,61 +49,35 @@ public class HomeController
 		return this.userRepository.findAll();
 	}
 	
-	
-	@PostMapping("/createa")
-	@ResponseBody
-	public Address createAddress(@RequestBody Address address)
-	{
-		return this.addressRepository.save(address);
-	}
-	
-	@RequestMapping("/")
-	public String home()
-	{
-		return "home";
-	}
-	
+	// -----------------| Show About page handler |-----------------
 	@RequestMapping("/about")
 	public String about()
 	{
 		return "about";
 	}
 	
+	// -----------------| Show Contact page handler |-----------------
 	@RequestMapping("/contact")
 	public String contact()
 	{
 		return "contact";
 	}
 	
+	// -----------------| Show Gallery page handler |-----------------
 	@RequestMapping("/gallery")
 	public String gallery()
 	{
 		return "gallery";
 	}
 	
-	@GetMapping("/sign")
-	public String signinHandler()
-	{
-		return "signin";
-	}
-	
+	// -----------------| Show login page |-----------------
 	@GetMapping("/signin")
 	public String loginHandler()
 	{
 		return "login";
 	}
 	
-	@GetMapping("/success")
-	public String singin()
-	{
-		return "success";
-	}
-	
-	public String signinsubmit()
-	{
-		return "success";
-	}
-	
+	// -----------------| Sign-in handler |-----------------
 	@PostMapping("/sign_user")
 	public String signinuser(@ModelAttribute("user") User user,
 							  @RequestParam("CStreet")String CStreet,
