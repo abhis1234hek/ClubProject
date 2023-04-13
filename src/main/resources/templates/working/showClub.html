@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="base::layout(~{::section})">
+<head>
+`
+<meta charset="UTF-8" />
+<title>Home page</title>
+</head>
+<body>
+	<section class="mb-5 ps-1 pe-1" style="width: 99%; height: 80vh;">
+
+
+		<div class="row mt-3 col-11 mx-auto" th:each="c:${clubs}">
+			<div class="col-3">
+				<img src="..." th:src="@{'images/club.jpg'}" style="width: 15rem;"
+					class="" alt="...">
+			</div>
+			<div class="col-9 shadow-lg">
+				<div class="row">
+					<div class="col-4">
+						<span th:text="'Club name -> ' + ${c.CName}"></span>
+					</div>
+					<div class="col-4">
+						<span th:text="'Contact -> ' + ${c.CContact}"></span>
+					</div>
+					<div class="col-4">
+						<span th:text="'Email -> ' + ${c.Email}"></span>
+					</div>
+				</div>
+				<div class="mt-5 row col-9">
+					<div class="col-4">
+						<button type="button" class="btn btn-primary ps-5 pe-5">Show address</button>
+					</div>
+					<div class="col-4">
+						<button type="button" class="btn btn-secondary ps-5 pe-5">Show Players</button>
+					</div>
+					<div class="col-4">
+						<button type="button" class="btn btn-outline-success ps-5 pe-5">Contact us</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

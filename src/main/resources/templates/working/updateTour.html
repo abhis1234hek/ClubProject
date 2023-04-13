@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{base::layout(~{::section})}">
+<head>
+<meta charset="UTF-8" />
+
+<title>update tournament page</title>
+</head>
+<body>
+	<section>
+		<h1>I am the page of update tournament</h1>
+
+		<div class="p-5">
+		<form th:action="@{'/user/updateTour/'+${tour.Tid}}" method="POST">
+		
+		
+			<!--Tournament name -->
+			<div class="mb-1">
+				<input
+					required type="hidden" class="form-control" name="Tid"
+					th:value="${tour.Tid}" id="exampleInputEmail1"
+					aria-describedby="emailHelp">
+			</div>
+		
+			<!--Tournament name -->
+			<div class="mb-1">
+				<input
+					required type="hidden" class="form-control" name="TClub"
+					th:value="${tour.TClub}" id="exampleInputEmail1"
+					aria-describedby="emailHelp">
+			</div>
+			
+			<!--Tournament name -->
+			<div class="mb-1">
+				<label for="exampleInputEmail1" class="form-label">Tournament name</label> <input
+					required type="text" class="form-control" name="TName"
+					th:value="${tour.TName}" id="exampleInputEmail1"
+					aria-describedby="emailHelp">
+			</div>
+			
+			<!--Tournament name -->
+			<div class="mb-1">
+				<label for="exampleInputEmail1" class="form-label">Start Date</label> <input
+					required type="text" class="form-control" name="TSDate"
+					th:value="${tour.TSDate}" id="exampleInputEmail1"
+					aria-describedby="emailHelp">
+			</div>
+			
+			<!--Tournament name -->
+			<div class="mb-1">
+				<label for="exampleInputEmail1" class="form-label">End Date</label> <input
+					required type="text" class="form-control" name="TEDate"
+					th:value="${tour.TEDate}" id="exampleInputEmail1"
+					aria-describedby="emailHelp">
+			</div>
+			
+			<!--Tournament name -->
+			<div class="mb-1">
+				<label for="exampleInputEmail1" class="form-label">Country</label> <input
+					required type="text" class="form-control" name="TPlace"
+					th:value="${tour.TPlace}" id="exampleInputEmail1"
+					aria-describedby="emailHelp">
+			</div>
+
+			<!-- Close & Submit -->
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary"
+					data-bs-dismiss="modal">Close</button>
+				<button type="submit" class="btn btn-primary">Submit</button>
+			</div>
+		</form>
+		</div>
+	</section>
+</body>
+</html>

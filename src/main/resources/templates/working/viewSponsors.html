@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="base::layout(~{::section})">
+<head>
+<meta charset="UTF-8" />
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
+<title>show sponsors</title>
+</head>
+<body>
+	<section style="width: 100%; height: 80vh;">
+
+		<h1>Below are the sponsors under the tournament</h1>
+		<button data-bs-toggle="modal" data-bs-target="#staticBackdropTour"
+			type="button" class="btn btn-danger btn-sm">Add Sponsor</button>
+
+		<!-- Showing matches -->
+		<div class="row col-10 mx-auto mt-5">
+			<table class="table">
+				<thead>
+					<tr>
+						<th scope="col">Sponsor id</th>
+						<th scope="col">Sponsor Name</th>
+						<th scope="col">Sponsor Location</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="s:${Sponsors}">
+						<th th:text="${s.SPid}"></th>
+						<th th:text="${s.SPName}"></th>
+						<th th:text="${s.SPLocation}"></th>
+						<td><a th:href="@{'/user/showupdatesponsor/'+${s.SPid}}"><button
+									type="button" class="btn btn-primary btn-sm">Update</button></a> <a
+							th:href="@{'/user/deleteSponsor/'+${s.SPid}}"><button
+									type="button" class="btn btn-danger btn-sm">Delete</button></a> 
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+
+
+		<!-- Update match modal -->
+		<div class="modal fade" id="staticBackdropTour"
+			data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+			aria-labelledby="staticBackdropLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="staticBackdropLabel">Sponsors
+							Info</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal"
+							aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<form th:action="@{/user/addSponsor}" method="POST">
+
+							<!-- Tournament Id -->
+							<div class="mb-1">
+								<label for="exampleInputEmail1" class="form-label">Sponsor
+									Name</label> <input required type="text" class="form-control"
+									name="SPName" id="exampleInputEmail1"
+									aria-describedby="emailHelp">
+							</div>
+
+							<!-- Tournament Id -->
+							<div class="mb-1">
+								<label for="exampleInputEmail1" class="form-label">Sponsor
+									Location</label> <input required type="text" class="form-control"
+									name="SPLocation" id="exampleInputEmail1"
+									aria-describedby="emailHelp">
+							</div>
+
+							<!-- Tournament Id -->
+							<div class="mb-1">
+								<input required type="hidden" th:value="${tid}" class="form-control"
+									name="Tourid" id="exampleInputEmail1"
+									aria-describedby="emailHelp">
+							</div>
+
+							<hr />
+							<!-- Close & Submit -->
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary"
+									data-bs-dismiss="modal">Close</button>
+								<button type="submit" class="btn btn-primary">Submit</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</section>
+</body>
+</html>

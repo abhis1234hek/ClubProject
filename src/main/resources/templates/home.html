@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="base::layout(~{::section})">
+<head>
+`
+<meta charset="UTF-8" />
+<title>Home page</title>
+</head>
+<body>
+	<section class="mb-5 ps-1 pe-1" style="width: 99%; height: 80vh;">
+		<div class="row text-center mt-5 mb-5">
+			<div class="col-4 text-center ">
+				<a th:href="@{/showSport}">
+					Sports
+				</a>
+			</div>
+			<div class="col-4">
+				<a th:href="@{/showClub}">
+					<button type="button" class="btn btn-outline-info btn-lg p-5">Clubs</button>
+				</a>
+			</div>
+			<div class="col-4">
+				<a th:href="@{/showTour}">
+				<button type="button" class="btn btn-outline-info btn-lg p-5">Tournament</button>
+			</a>
+			</div>
+		</div>
+		<div class="row text-center mt-5 mb-5">
+			<div class="col-4">
+				<a th:href="@{/showKit}">
+				<button type="button" class="btn btn-outline-info btn-lg p-5">Kit Classification</button>
+			</a>
+			</div>
+			<div class="col-4">
+				<a th:href="@{/showRegister}">
+				<button type="button" class="btn btn-outline-info btn-lg p-5">Registration</button>
+			</a>
+			</div>
+			<div class="col-4">
+				<a th:href="@{/showMember}">
+				<button type="button" class="btn btn-outline-info btn-lg p-5">Membership</button>
+			</a>
+			</div>
+		</div>
+		</section>
+</body>
+</html>

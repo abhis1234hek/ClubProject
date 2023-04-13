@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{base::layout(~{::section})}">
+<head>
+<meta charset="UTF-8" />
+
+<title>update sponsor page</title>
+</head>
+<body>
+	<section>
+			<h1>I am the page of update sponsor</h1>
+			<div class="p-5">
+			<form th:action="@{'/user/updateSponsor/'+${s.SPid}}" method="POST">
+
+											<!--Tournament name -->
+											<div class="mb-1">
+												<label for="exampleInputEmail1" class="form-label">Sponsor Name</label>
+												<input required type="text" class="form-control"
+													name="SPName" th:value="${s.SPName}" id="exampleInputEmail1"
+													aria-describedby="emailHelp">
+											</div>
+											
+											<!--Tournament name -->
+											<div class="mb-1">
+												<label for="exampleInputEmail1" class="form-label">Sponsor Location</label>
+												<input required type="text" class="form-control"
+													name="SPLocation" th:value="${s.SPLocation}" id="exampleInputEmail1"
+													aria-describedby="emailHelp">
+											</div>
+
+											<hr />
+											<!-- Close & Submit -->
+											<div class="modal-footer">
+												<button type="button" class="btn btn-secondary"
+													data-bs-dismiss="modal">Close</button>
+												<button type="submit" class="btn btn-primary">Submit</button>
+											</div>
+										</form>
+										</div>
+	</section>
+</body>
+</html>

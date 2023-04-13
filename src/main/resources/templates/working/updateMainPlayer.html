@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{base::layout(~{::section})}">
+<head>
+<meta charset="UTF-8" />
+
+<title>update sponsor page</title>
+</head>
+<body>
+	<section>
+			<h1>I am the page of update sponsor</h1>
+			<div class="p-5">
+			<form th:action="@{'/user/updateMainPlayer/'+${p.CPid}}" method="POST">
+			
+							<!-- First & Last name -->
+							<div class="mb-1 row">
+
+								<!-- First name -->
+								<div class="col-12">
+									<label for="exampleInputEmail1" class="form-label">Player
+										Name</label> <input required type="text" class="form-control"
+										name="CPName" th:value="${p.CPName}" id="exampleInputEmail1"
+										aria-describedby="emailHelp">
+								</div>
+
+							</div>
+
+							<!-- Age -->
+							<div class="mb-1">
+								<label for="exampleInputEmail1" class="form-label">Age </label>
+								<input required type="text" class="form-control" name="CPAge" th:value="${p.CPAge}"
+									id="exampleInputEmail1" aria-describedby="emailHelp">
+							</div>
+
+
+							<!-- Contact -->
+							<div class="mb-1">
+								<label for="exampleInputEmail1" class="form-label">Contact
+									no.</label> <input required type="text" class="form-control"
+									name="CPContact" th:value="${p.CPContact}" id="exampleInputEmail1"
+									aria-describedby="emailHelp">
+							</div>
+
+							<!-- Email -->
+							<div class="mb-1">
+								<label for="exampleInputEmail1" class="form-label">Email
+									Address</label> <input required type="email" class="form-control"
+									name="CPEmail" th:value="${p.CPEmail}" id="exampleInputEmail1"
+									aria-describedby="emailHelp">
+							</div>
+
+							<!-- Image -->
+							<div class="mb-1">
+								<label for="exampleInputEmail1" class="form-label">Image</label>
+								<input required type="text" class="form-control" name="CPImage"
+									id="exampleInputEmail1" th:value="${p.CPImage}" aria-describedby="emailHelp">
+							</div>
+
+							<!-- Domain -->
+							<div class="mb-1">
+								<label for="exampleInputEmail1" class="form-label">Domains</label>
+								<input required type="text" class="form-control" name="CPDomain"
+									id="exampleInputEmail1" th:value="${p.CPDomain}" aria-describedby="emailHelp">
+							</div>
+
+							<!-- Address -->
+							<div class="mb-1">
+								<label for="exampleInputEmail1" class="form-label">Address</label>
+								<input required type="text" class="form-control"
+									name="CPAddress" th:value="${p.CPAddress}" id="exampleInputEmail1"
+									aria-describedby="emailHelp">
+							</div>
+							<!-- Close & Submit -->	
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary"
+									data-bs-dismiss="modal">Close</button>
+								<button type="submit" class="btn btn-primary">Submit</button>
+							</div>
+						</form>
+					</div>
+	</section>
+</body>
+</html>
