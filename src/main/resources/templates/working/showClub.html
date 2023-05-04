@@ -2,44 +2,59 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
 	th:replace="base::layout(~{::section})">
 <head>
-`
 <meta charset="UTF-8" />
-<title>Home page</title>
+<title>Home page Club Show</title>
 </head>
 <body>
-	<section class="mb-5 ps-1 pe-1" style="width: 99%; height: 80vh;">
+
+<!-- Showing Club on Home Page -->
+	<section class="mb-5 ps-1 pe-1 " style="width: 99%; height: 60vh;">
 
 
-		<div class="row mt-3 col-11 mx-auto" th:each="c:${clubs}">
-			<div class="col-3">
-				<img src="..." th:src="@{'images/club.jpg'}" style="width: 15rem;"
-					class="" alt="...">
-			</div>
-			<div class="col-9 shadow-lg">
-				<div class="row">
-					<div class="col-4">
-						<span th:text="'Club name -> ' + ${c.CName}"></span>
-					</div>
-					<div class="col-4">
-						<span th:text="'Contact -> ' + ${c.CContact}"></span>
-					</div>
-					<div class="col-4">
-						<span th:text="'Email -> ' + ${c.Email}"></span>
-					</div>
+		<div class="row mt-5 col-11 mx-auto " th:each="c:${clubs}">
+			<div class="row shadow-lg mb-3">
+				<div class="col-2 row ">
+					<img src="..." th:src="@{'images/users/'+${c.Image}}"
+						style="width: 11rem; height: 9rem; border-radius: 1rem;" class=""
+						alt="...">
 				</div>
-				<div class="mt-5 row col-9">
-					<div class="col-4">
-						<button type="button" class="btn btn-primary ps-5 pe-5">Show address</button>
+				<div class="col-10 row">
+					<div class="row mt-2 mb-5">
+						<div class="col-4 fw-bolder">
+							<span th:text="'Club name -> ' + ${c.CName}"></span>
+						</div>
+						<div class="col-4 fw-bolder">
+							<span th:text="'Contact -> ' + ${c.CContact}"></span>
+						</div>
+						<div class="col-4 fw-bolder">
+							<span th:text="'Email -> ' + ${c.Email}"></span>
+						</div>
 					</div>
-					<div class="col-4">
-						<button type="button" class="btn btn-secondary ps-5 pe-5">Show Players</button>
+					<div class="row">
+						<div class="col-1 fw-bolder">
+							<span>Address</span>
+						</div>
+						<div class="col-3 ">
+							<span th:text="'Street-> ' + ${c.address.CStreet}"></span>
+						</div>
+						<div class="col-2 ">
+							<span th:text="'Area -> ' + ${c.address.CArea}"></span>
+						</div>
+						<div class="col-2 ">
+							<span th:text="'City -> ' + ${c.address.CCity}"></span>
+						</div>
+						<div class="col-3 ">
+							<span th:text="'State -> ' + ${c.address.CState}"></span>
+						</div>
 					</div>
-					<div class="col-4">
-						<button type="button" class="btn btn-outline-success ps-5 pe-5">Contact us</button>
-					</div>
+					<div class=" mt-5 row mx-auto"></div>
 				</div>
 			</div>
+
 		</div>
+
 	</section>
+
+
 </body>
 </html>

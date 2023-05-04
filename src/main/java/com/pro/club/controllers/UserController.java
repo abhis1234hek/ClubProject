@@ -1,5 +1,10 @@
 package com.pro.club.controllers;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.security.Principal;
 import java.util.List;
 import java.util.Optional;
@@ -7,15 +12,13 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.pro.club.dao.PlayersRepository;
 import com.pro.club.dao.SponsorRepository;
@@ -61,12 +64,13 @@ public class UserController
 		User user = this.userRepository.getUserByUserName(email);
 		model.addAttribute("name",user.getCName());
 		model.addAttribute("contact",user.getCContact());
+		model.addAttribute("image",user.getImage());
 		model.addAttribute("email",user.getEmail());
 		model.addAttribute("address",user.getAddress());
 		return "success";
 	}
 	
-	//                                        | SECTION A |
+	//                                     | SECTION A |
 	/*--------------------------------------------------------------------------------------------------------------------*/
 	// -----------------| Main Players CRUD |-----------------
 	@GetMapping("/viewPlayers")
@@ -80,8 +84,12 @@ public class UserController
 	}
 	
 	@PostMapping("/savePlayer")
-	public String addPlayers(@ModelAttribute("player") Players player,Principal principal)
+	public String addPlayers(@ModelAttribute("player") Players player,@RequestParam("pimage") MultipartFile pimage,Principal principal) throws IOException
 	{
+		String UPLOAD_DIR = "E:\\ClubAPI\\ClubAPI-master\\src\\main\\resources\\static\\images\\mainplay";
+		Files.copy(pimage.getInputStream(), Paths.get(UPLOAD_DIR+File.separator+pimage.getOriginalFilename()),StandardCopyOption.REPLACE_EXISTING);
+		player.setCPImage(pimage.getOriginalFilename());
+		
 		System.out.println(player);
 		String email = principal.getName();
 		User user = this.userRepository.getUserByUserName(email);
@@ -118,6 +126,10 @@ public class UserController
 		this.playersRepository.deleteById(CPid);
 		return "redirect:/user/viewPlayers";
 	}
+    /*--------------------------------------------------------------------------------------------------------------------*/
+	
+	/*||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*/
+	
 	/*--------------------------------------------------------------------------------------------------------------------*/
 	
 
@@ -130,8 +142,6 @@ public class UserController
 		String email = principal.getName();
 		User user = this.userRepository.getUserByUserName(email);
 		tournament.setTClub(user.getCName());
-		String textdomain = tournament.getTName()+" [ "+TDomain+" ]";
-		tournament.setTName(textdomain);
 		System.out.println(tournament);
 		this.tournamentRepository.save(tournament);
 		return "redirect:/user/index";
@@ -178,7 +188,7 @@ public class UserController
 	/*||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*/
 	
 	/*--------------------------------------------------------------------------------------------------------------------*/
-	// -----------------| Match CRUD |-----------------
+	// -----------------| Matches CRUD |-----------------
 	@PostMapping("/addMatch")
 	public String addMatch(@ModelAttribute("tmatch") Tmatch tmatch,@RequestParam("Tourid") int Tourid)
 	{
@@ -204,6 +214,7 @@ public class UserController
 	{
 		Tmatch tmatch = this.tmatchRepository.findById(Mid).orElseThrow();
 		model.addAttribute("m",tmatch);
+		model.addAttribute("Mid",tmatch.getTournament().getTid());
 		return "working/updateMatch";
 	}
 	
@@ -251,6 +262,9 @@ public class UserController
 	{
 		List<Tplayers> players = this.tPlayersRepository.getPlayersByMatch(Mid);
 		m.addAttribute("players",players);
+		Tmatch tmatch = this.tmatchRepository.findById(Mid).orElseThrow();
+		int Tid = tmatch.getTournament().getTid();
+		m.addAttribute("Mid",Tid);
 		return "/working/viewPlayers";
 	}
 	
@@ -313,6 +327,7 @@ public class UserController
 	{
 		Sponsor sponsor = this.sponsorRepository.findById(SPid).orElseThrow();
 		model.addAttribute("s",sponsor);
+		model.addAttribute("Mid",sponsor.getTournament().getTid());
 		return "working/updateSponsor";
 	}
 	

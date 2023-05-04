@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" 
+				th:replace="base::layout(~{::section})">
+<head>
+<meta charset="UTF-8" />
+<title>Indoor Game page</title>
+</head>
+<body >
+<section style="width: 100%; height: 100vh; background-color: #232533;">
+
+<div class="container" style="width: 100%; height: 100%; max-width: 600px; max-height: 600px; display: flex;  transform-style: preserve-3d;
+ justify-content: center; align-items: center; flex-direction: column;">
+
+
+    <input type="radio" name="slider" class="d-none" id="s1" checked style=" display: none;">
+    <input type="radio" name="slider" class="d-none" id="s2" style=" display: none;">
+    <input type="radio" name="slider" class="d-none" id="s3" style=" display: none;">
+    <input type="radio" name="slider" class="d-none" id="s4" style=" display: none;">
+    <input type="radio" name="slider" class="d-none" id="s5" style=" display: none;">
+
+    <div class="cards" 
+    style="position: relative; height: 500px; width: 430px; margin-bottom: 20px; perspective: 1000px; transform-style: preserve-3d;">
+      <label for="s1" id="slide1" 
+      style="position: absolute;width: 430px;left: 0;right: 0;margin: auto;cursor: pointer;transition: transform 0.55s ease;">
+        <div class="card" 
+        style="position: relative; height: 100%; background-color: #323444; border-radius: 10px; padding: 30px 35px;">
+          <div class="image" 
+          style="display: flex;  justify-content: space-between;">
+            <img src="img/Nike SuperRep Go.jpg" alt="" 
+            style="  border-radius: 5px; box-shadow: 15px 15px 40px rgba(0, 0, 0, 50%);margin-top: 23px;width: 86%;height: 220px;  object-fit: cover;">
+            <div class="dots" style=" text-align: center;">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+          <div class="infos" 
+          style="display: block; text-align: end; padding-top: 60px;">
+            <span class="name" 
+ style="font-size: 30px;color: var(--current-color1);letter-spacing: 8px;margin-bottom: 20px;padding-left: 25%;display: block;transition: all .6s ease;"
+ >Invention in India</span>
+            <span class="lorem" style=" font-size: 15.5px;color: #ECEAED; letter-spacing: 3px;  display: block;">
+           Carrom is played on a square polished plywood board with a striker made of hard plastic and small circular wooden pieces.</span>
+          </div>
+          <a   
+  style=" width: 100% ;height: 60px; margin: 35px auto;  border-radius: 5px;background-color: var(--current-color1);display: flex; align-items: center; 
+  justify-content: center; color: #fff; font-size: 25px; letter-spacing: 10px; font-weight: 700;transition: all .7s ease;">Carrom</a>
+          <div class="socials" style="display: flex; justify-content: space-between; align-items: center; padding-top: 20px;">
+            <i class="fa-solid fa-cart-shopping" style="font-size: 25px; transition: all .7s ease; color: var(--current-color2);"></i>
+            <i class="fa-regular fa-heart" style="font-size: 25px; transition: all .7s ease; color: var(--current-color2);"></i>
+            <i class="fa-regular fa-bookmark" style="font-size: 25px; transition: all .7s ease; color: var(--current-color2);"></i>
+            <i class="fa-solid fa-share-nodes" style="font-size: 25px; transition: all .7s ease; color: var(--current-color2);"></i>
+          </div>
+        </div>
+      </label>
+
+      <label for="s2" id="slide2" 
+      style="position: absolute;width: 430px;left: 0;right: 0;margin: auto;cursor: pointer;transition: transform 0.55s ease;">
+        <div class="card"
+        style="position: relative; height: 100%; background-color: #323444; border-radius: 10px; padding: 30px 35px;">
+          <div class="image"
+          style="display: flex;  justify-content: space-between;">
+            <img src="img/Free run flyknit.jpg" alt=""
+            style="  border-radius: 5px; box-shadow: 15px 15px 40px rgba(0, 0, 0, 50%);margin-top: 23px;width: 86%;height: 220px;  object-fit: cover;">
+            <div class="dots" style=" text-align: center;">
+              <div class="dot1"></div>
+              <div class="dot2"></div>
+              <div class="dot3"></div>
+            </div>
+          </div>
+          <div class="infos"
+          style="display: block; text-align: end; padding-top: 60px;">
+            <span class="name"
+  style="font-size: 30px;color: var(--current-color1);letter-spacing: 8px;margin-bottom: 20px;padding-left: 25%;display: block;transition: all .6s ease;"          
+            >Invention in India</span>
+            <span class="lorem"
+            style=" font-size: 15.5px;color: #ECEAED; letter-spacing: 3px;  display: block;"
+            >It is a racket sport played using racket to hit a shuttlecock across a net.Which is played between either two teams or two players.</span>
+          </div>
+          <a
+   style=" width: 100% ;height: 60px; margin: 35px auto;  border-radius: 5px;background-color: var(--current-color1);display: flex; align-items: center; 
+  justify-content: center; color: #fff; font-size: 25px; letter-spacing: 10px; font-weight: 700;transition: all .7s ease;">Badminton</a>
+          <div class="socials" style="display: flex; justify-content: space-between; align-items: center; padding-top: 20px;">
+            <i class="fa-solid fa-cart-shopping" style="font-size: 25px; transition: all .7s ease; color: var(--current-color2);"></i>
+            <i class="fa-regular fa-heart" style="font-size: 25px; transition: all .7s ease; color: var(--current-color2);"></i>
+            <i class="fa-regular fa-bookmark" style="font-size: 25px; transition: all .7s ease; color: var(--current-color2);"></i>
+            <i class="fa-solid fa-share-nodes" style="font-size: 25px; transition: all .7s ease; color: var(--current-color2);"></i>
+          </div>
+        </div>
+      </label>
+      
+       <label for="s3" id="slide3" 
+      style="position: absolute;width: 430px;left: 0;right: 0;margin: auto;cursor: pointer;transition: transform 0.55s ease;">
+        <div class="card"
+        style="position: relative; height: 100%; background-color: #323444; border-radius: 10px; padding: 30px 35px;">
+          <div class="image"
+          style="display: flex;  justify-content: space-between;">
+            <img src="img/Free run flyknit.jpg" alt=""
+            style="  border-radius: 5px; box-shadow: 15px 15px 40px rgba(0, 0, 0, 50%);margin-top: 23px;width: 86%;height: 220px;  object-fit: cover;">
+            <div class="dots" style=" text-align: center;">
+              <div class="dot1"></div>
+              <div class="dot2"></div>
+              <div class="dot3"></div>
+            </div>
+          </div>
+          <div class="infos"
+          style="display: block; text-align: end; padding-top: 60px;">
+            <span class="name"
+  style="font-size: 30px;color: var(--current-color1);letter-spacing: 8px;margin-bottom: 20px;padding-left: 25%;display: block;transition: all .6s ease;"          
+            >Invention in India</span>
+            <span class="lorem"
+            style=" font-size: 15.5px;color: #ECEAED; letter-spacing: 3px;  display: block;"
+            >It is played by two opponents on a checkered board with specially designed pieces of contrasting colours, commonly white and black.</span>
+          </div>
+          <a 
+   style=" width: 100% ;height: 60px; margin: 35px auto;  border-radius: 5px;background-color: var(--current-color1);display: flex; align-items: center; 
+  justify-content: center; color: #fff; font-size: 25px; letter-spacing: 10px; font-weight: 700;transition: all .7s ease;">Chess</a>
+          <div class="socials" style="display: flex; justify-content: space-between; align-items: center; padding-top: 20px;">
+            <i class="fa-solid fa-cart-shopping" style="font-size: 25px; transition: all .7s ease; color: var(--current-color2);"></i>
+            <i class="fa-regular fa-heart" style="font-size: 25px; transition: all .7s ease; color: var(--current-color2);"></i>
+            <i class="fa-regular fa-bookmark" style="font-size: 25px; transition: all .7s ease; color: var(--current-color2);"></i>
+            <i class="fa-solid fa-share-nodes" style="font-size: 25px; transition: all .7s ease; color: var(--current-color2);"></i>
+          </div>
+        </div>
+      </label>
+      
+       <label for="s4" id="slide4" 
+      style="position: absolute;width: 430px;left: 0;right: 0;margin: auto;cursor: pointer;transition: transform 0.55s ease;">
+        <div class="card"
+        style="position: relative; height: 100%; background-color: #323444; border-radius: 10px; padding: 30px 35px;">
+          <div class="image"
+          style="display: flex;  justify-content: space-between;">
+            <img src="img/Free run flyknit.jpg" alt=""
+            style="  border-radius: 5px; box-shadow: 15px 15px 40px rgba(0, 0, 0, 50%);margin-top: 23px;width: 86%;height: 220px;  object-fit: cover;">
+            <div class="dots" style=" text-align: center;">
+              <div class="dot1"  ></div>
+              <div class="dot2" ></div>
+              <div class="dot3" ></div>
+            </div>
+          </div>
+          <div class="infos"
+          style="display: block; text-align: end; padding-top: 60px;">
+            <span class="name"
+  style="font-size: 30px;color: var(--current-color1);letter-spacing: 8px;margin-bottom: 20px;padding-left: 25%;display: block;transition: all .6s ease;"          
+            >Invention in England</span>
+            <span class="lorem"
+            style=" font-size: 15.5px;color: #ECEAED; letter-spacing: 3px;  display: block;"
+            >Table Tennis is a game played on a flat table divided into two courts by a net.Table tennis is a game played inside by two or four people.</span>
+          </div>
+          <a 
+   style=" width: 100% ;height: 60px; margin: 35px auto;  border-radius: 5px;background-color: var(--current-color1);display: flex; align-items: center; 
+  justify-content: center; color: #fff; font-size: 25px; letter-spacing: 10px; font-weight: 700;transition: all .7s ease;">Table Tennis</a>
+          <div class="socials" style="display: flex; justify-content: space-between; align-items: center; padding-top: 20px;">
+            <i class="fa-solid fa-cart-shopping" style="font-size: 25px; transition: all .7s ease; color: var(--current-color2);"></i>
+            <i class="fa-regular fa-heart" style="font-size: 25px; transition: all .7s ease; color: var(--current-color2);"></i>
+            <i class="fa-regular fa-bookmark" style="font-size: 25px; transition: all .7s ease; color: var(--current-color2);"></i>
+            <i class="fa-solid fa-share-nodes" style="font-size: 25px; transition: all .7s ease; color: var(--current-color2);"></i>
+          </div>
+        </div>
+      </label>
+      
+       <label for="s5" id="slide5" 
+      style="position: absolute;width: 430px;left: 0;right: 0;margin: auto;cursor: pointer;transition: transform 0.55s ease;">
+        <div class="card"
+        style="position: relative; height: 100%; background-color: #323444; border-radius: 10px; padding: 30px 35px;">
+          <div class="image"
+          style="display: flex;  justify-content: space-between;">
+            <img src="img/Free run flyknit.jpg" alt=""
+            style="  border-radius: 5px; box-shadow: 15px 15px 40px rgba(0, 0, 0, 50%);margin-top: 23px;width: 86%;height: 220px;  object-fit: cover;">
+            <div class="dots" style=" text-align: center;">
+              <div class="dot1"></div>
+              <div class="dot2"></div>
+              <div class="dot3"></div>
+            </div>
+          </div>
+          <div class="infos"
+          style="display: block; text-align: end; padding-top: 60px;">
+            <span class="name"
+  style="font-size: 30px;color: var(--current-color1);letter-spacing: 8px;margin-bottom: 20px;padding-left: 25%;display: block;transition: all .6s ease;"          
+            >Invention in China</span>
+            <span class="lorem"
+            style=" font-size: 15.5px;color: #ECEAED; letter-spacing: 3px;  display: block;"
+            >Archery is the sport, practice, or skill of using a bow to shoot arrows.it is mainly a competitive sport and recreational activity.</span>
+          </div>
+          <a 
+   style=" width: 100% ;height: 60px; margin: 35px auto;  border-radius: 5px;background-color: var(--current-color1);display: flex; align-items: center; 
+  justify-content: center; color: #fff; font-size: 25px; letter-spacing: 10px; font-weight: 700;transition: all .7s ease;">Archery</a>
+          <div class="socials" style="display: flex; justify-content: space-between; align-items: center; padding-top: 20px;">
+            <i class="fa-solid fa-cart-shopping" style="font-size: 25px; transition: all .7s ease; color: var(--current-color2);"></i>
+            <i class="fa-regular fa-heart" style="font-size: 25px; transition: all .7s ease; color: var(--current-color2);"></i>
+            <i class="fa-regular fa-bookmark" style="font-size: 25px; transition: all .7s ease; color: var(--current-color2);"></i>
+            <i class="fa-solid fa-share-nodes" style="font-size: 25px; transition: all .7s ease; color: var(--current-color2);"></i>
+          </div>
+        </div>
+      </label>
+      </div>
+</div>
+<span><a th:href="@{/showSport}"><button type="button" class="btn btn-outline-primary ms-3"><i class="fa fa-less-than fa-2x"></i></button></a></span>
+</section>
+</body>
+</html>

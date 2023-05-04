@@ -2,46 +2,114 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
 	th:replace="base::layout(~{::section})">
 <head>
-`
+
 <meta charset="UTF-8" />
 <title>Home page</title>
 </head>
 <body>
-	<section class="mb-5 ps-1 pe-1" style="width: 99%; height: 80vh;">
-		<div class="row text-center mt-5 mb-5">
-			<div class="col-4 text-center ">
-				<a th:href="@{/showSport}">
-					Sports
+	<section class="mt-5 ps-1" style="width: 95%; height: 80vh;">
+		<div class="row ms-5">
+
+			<!-- First row -->
+			
+			<div class="row mb-1 text-center">
+
+				<a  th:href="@{/showSport}"  class=" col-4 text-decoration-none">
+					<div class="row p-5 me-1 sportsback text-center text-white  fw-bolder  fs-1">
+						<div class="row p-5 mx-auto text-center">Sports</div>
+					</div>
+				</a> <a th:href="@{/showClub}" href="" class="col-4 text-white text-decoration-none">
+					<div class="row p-5 me-1 clubback text-center text-black fw-bolder  fs-1">
+						<div class="row p-5 mx-auto text-center">Club</div>
+					</div>
+				</a> <a th:href="@{/showTour}" href="" class="col-4 text-decoration-none">
+					<div class="row p-5 me-1 tourback text-center text-white fw-bolder  fs-1">
+						<div class="row p-5 mx-auto text-center">Tournaments</div>
+					</div>
 				</a>
+
+
 			</div>
-			<div class="col-4">
-				<a th:href="@{/showClub}">
-					<button type="button" class="btn btn-outline-info btn-lg p-5">Clubs</button>
+
+			<!-- Second row -->
+			
+				<div class="row mb-1 text-center">
+
+				<a  th:href="@{/showKit}" href="" class="col-4 text-decoration-none">
+					<div class="row p-5 me-1 kitback text-center text-white fw-bolder  fs-1">
+						<div class="row p-5 mx-auto text-center">Kit classification</div>
+					</div>
+				</a> <a th:href="@{/showRegister}" href="" class="col-4 text-decoration-none">
+					<div class="row p-5 me-1 registerback fw-bolder  fs-1 text-center text-white ">
+						<div class="row p-5 mx-auto text-center">Registration</div>
+					</div>
+				</a> <a th:href="@{/showMember}" href="" class="col-4 text-decoration-none">
+					<div class="row p-5 me-1 memberback fw-bolder  fs-1 text-center text-white ">
+						<div class="row p-5 mx-auto text-center">Membership</div>
+					</div>
 				</a>
-			</div>
-			<div class="col-4">
-				<a th:href="@{/showTour}">
-				<button type="button" class="btn btn-outline-info btn-lg p-5">Tournament</button>
-			</a>
+
+
 			</div>
 		</div>
-		<div class="row text-center mt-5 mb-5">
-			<div class="col-4">
-				<a th:href="@{/showKit}">
-				<button type="button" class="btn btn-outline-info btn-lg p-5">Kit Classification</button>
-			</a>
-			</div>
-			<div class="col-4">
-				<a th:href="@{/showRegister}">
-				<button type="button" class="btn btn-outline-info btn-lg p-5">Registration</button>
-			</a>
-			</div>
-			<div class="col-4">
-				<a th:href="@{/showMember}">
-				<button type="button" class="btn btn-outline-info btn-lg p-5">Membership</button>
-			</a>
-			</div>
-		</div>
-		</section>
+		
+
+	
+	<div class="container ourservice text-center mt-5">
+        <h1>SERVICE</h1>
+        <h2>Xstream Sport Clubs</h2>
+      <div class="row">
+      <div class="col-lg-4 col-md-4 col-sm-4 col-10 d-block mt-4">
+        <div class="d-block m-auto">
+          <i class="fa fa-user fa-3x bg-secondary text-white" style="border-radius:40%; width:50px;height:50px;"aria-hidden="true"></i></div>
+            <h2>User</h2>
+            <p style="font-size:20px;">It allows normal users to avail for club membership,and even enroll for various activities in the club. </p>
+        
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-4 col-10 d-block mt-4">
+        <div class="d-block m-auto">
+        <i class="fa fa-users fa-3x bg-secondary text-white" style="border-radius:40%; width:50px;height:50px;"aria-hidden="true"></i></div>
+            <h2>Customer</h2>
+            <p style="font-size:20px;">This website serves as a link between other clubs.
+And informs the user about the tournaments happening inside the clubs. </p>
+        
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-4 col-10 d-block mt-4">
+        <div class="d-block m-auto">
+        <i class="fa-solid fa-shield-halved fa-3x bg-secondary text-white" style="border-radius:40%; width:50px;height:50px;;"aria-hidden="true"></i></div>
+            <h2>Security</h2>
+            <p style="font-size:20px;">Digital security ID cards can be programmed to contain data about every single guest in your club, so they can be used by members to gain access to various areas and obtain equipment within the club.</p>
+        
+      </div>
+      </div>
+ <div class="row">
+      <div class="col-lg-4 col-md-4 col-sm-4 col-10 d-block mt-4">
+        <div class="d-block m-auto">
+          <i class="fa fa-calendar fa-3x bg-secondary text-white" style="border-radius:40%; width:50px;height:50px;"aria-hidden="true"></i></div>
+            <h2>Programs and Event</h2>
+            <p style="font-size:20px;">The organisation and scheduling of events and programs is a key service that enables people to actually participate.</p>
+        
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-4 col-10 d-block mt-4">
+        <div class="d-block m-auto">
+        <i class="fa fa-id-card fa-3x bg-secondary text-white" style="border-radius:40%; width:50px;height:50px;"aria-hidden="true"></i></div>
+            <h2>Registration</h2>
+            <p style="font-size:20px;">Sport and Recreation organisations need to ensure that coaches and instructors, and often the participants themselves are accredited for the activity.</p>
+        
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-4 col-10 d-block mt-4">
+        <div class="d-block m-auto">
+        <i class="fa fa-compass fa-3x bg-secondary text-white" style="border-radius:40%; width:50px;height:50px;;"aria-hidden="true"></i></div>
+            <h2>Facility Maintenance</h2>
+            <p style="font-size:20px;">Facilities need to be carefully maintained to comply with rules of sport and/or to enable participants to play safely.</p>
+        
+      </div>
+      </div>
+<div>
+   <h5 class="card p-4 mt-3 text-white" style="background-color:#191A19;">“People throw stones at you and you convert them into milestones.”</h5>
+  </div>
+    </div>
+
+    </section>
 </body>
 </html>

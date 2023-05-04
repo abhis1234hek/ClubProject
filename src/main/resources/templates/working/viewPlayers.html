@@ -11,6 +11,8 @@
 <title>Show Tour players</title>
 </head>
 <body>
+
+	<!-- Showing Team Player -->
 	<section style="width: 100%; height: 80vh;">
 		<div class="row col-10 mx-auto mt-5">
 			<table class="table">
@@ -24,20 +26,30 @@
 				</thead>
 				<tbody>
 					<tr th:each="p:${players}">
-						<th th:text="'CLMA'+${p.Mpid}+'2023'"></th>
+						<th th:text="'PID_'+${p.Mpid}"></th>
 						<td th:text="${p.Mpname}"></td>
 						<td th:text="${p.Mpteam}"></td>
 						<td>
-						<a th:href="@{'/user/updatetplayer/'+${p.Mpid}}"><button
+							<!-- Update and Delete Player--> <a
+							th:href="@{'/user/updatetplayer/'+${p.Mpid}}"><button
 									type="button" data-bs-toggle="modal"
-											data-bs-target="#staticBackdropTour" class="btn btn-outline-success btn-sm">Update</button></a>
-							<a th:href="@{'/user/deleteplayer/' + ${p.Mpid}}"><button
-									type="button" class="btn btn-danger btn-sm">Delete</button></a></td>
+									data-bs-target="#staticBackdropTour"
+									class="btn btn-outline-success btn-sm">Update</button></a> <a
+							th:href="@{'/user/deleteplayer/' + ${p.Mpid}}"><button
+									type="button" class="btn btn-danger btn-sm">Delete</button></a>
+						</td>
 
-						
+
 					</tr>
 				</tbody>
 			</table>
+		</div>
+		<!-- Back  -->
+		<div class="modal-footer">
+		<a th:href="@{'/user/viewTourMatches/'+${Mid}}">
+			<button type="button" class="btn btn-secondary"
+				data-bs-dismiss="modal">Back</button>
+			</a>
 		</div>
 	</section>
 </body>

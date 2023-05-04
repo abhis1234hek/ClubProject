@@ -11,14 +11,14 @@
 	<div class="p-5">
 		<form th:action="@{/user/updateplayer}" method="POST">
 
-											<!--Tournament name -->
+											<!--Match Player ID -->
 											<div class="mb-1">
 												</label> <input th:value="${tplayer.Mpid}" required type="hidden" class="form-control"
 													name="Mpid" id="exampleInputEmail1"
 													aria-describedby="emailHelp" >
 											</div>
 
-											<!--Tournament name -->
+											<!--Player Name -->
 											<div class="mb-1">
 												<label for="exampleInputEmail1" class="form-label">Player
 													Name</label> <input th:value="${tplayer.Mpname}" required type="text" class="form-control"
@@ -26,7 +26,7 @@
 													aria-describedby="emailHelp">
 											</div>
 
-											<!-- Start Date -->
+											<!-- Team Name -->
 											<div class="mb-1">
 												<label for="exampleInputEmail1" class="form-label">Team
 													</label> <input th:value="${tplayer.Mpteam}" required type="text" class="form-control"
@@ -36,7 +36,7 @@
 											
 
 											<hr />
-											<!-- Close & Submit -->
+											<!-- Back & Submit -->
 											<div class="modal-footer">
 												<a th:href="@{'/user/viewTPlayers/'+${tplayer.tmatch.Mid}}"><button type="button" class="btn btn-secondary"
 													data-bs-dismiss="modal">Back</button></a>

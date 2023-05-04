@@ -22,6 +22,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity
+@ToString
 @Getter
 @Setter
 @NoArgsConstructor
@@ -43,13 +44,5 @@ public class Tmatch
 	@JsonManagedReference
 	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "tmatch")
 	private List<Tplayers> tplayers = new ArrayList<>();
-
-	@Override
-	public String toString() {
-		return "Tmatch [Mid=" + Mid + ", Mmteama=" + Mmteama + ", Mmteamb=" + Mmteamb + ", Mmdate=" + Mmdate
-				+ ", Mmplace=" + Mmplace + ", tournament=" + tournament + ", tplayers=" + tplayers + "]";
-	}
-	
-	
 	
 }

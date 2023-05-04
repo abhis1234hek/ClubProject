@@ -11,7 +11,7 @@
 <title>Login</title>
 </head>
 <body>
-	<section style="width: 100%; height: 80vh;">
+	<section style="width: 99%; height: 80vh;">
 		<div class="row p-5">
 
 			<!-- Login form -->
@@ -20,13 +20,15 @@
 					<form class=" row" th:action="@{/dologin}" method="post">
 
 						<div class="row">
-							<h1 class="text-center mt-3">Log in</h1>
+							<h1 class="text-center mx-auto">Log in</h1>
 						</div>
-
+						
+						<!-- Logo -->
+                            <img class=" mx-auto" style="width:250px;" src="images/logo.gif">
 						<!-- Error alert -->
 						<div class="alert alert-danger col-11 mx-auto"
 							th:if="${param.error}">Invalid username and password</div>
-
+                        <!-- Successfully logged -->
 						<div class="alert alert-success col-11 mx-auto"
 							th:if="${param.logout}">You have successfully logged out</div>
 
@@ -59,7 +61,7 @@
 							<!-- Register buttons -->
 							<div class="col text-center">
 								<p>
-									Not a member? <a data-bs-toggle="modal" type="button" data-bs-target="#exampleModal">Register here</a>
+									Not a member? <a data-bs-toggle="modal" type="button" data-bs-target="#exampleModal"><i class="material-icons text-info mr-2 me-2">Register here</i></a>
 								</p>
 							</div>
 
@@ -76,104 +78,108 @@
 		</div>
 
 
-		<!-- Sign up Page Modal -->
-		<div class="modal fade" id="exampleModal" tabindex="-1"
-			aria-labelledby="exampleModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLabel">Sign up</h5>
-						<button type="button" class="btn-close" data-bs-dismiss="modal"
-							aria-label="Close"></button>
-					</div>
-					<div class="modal-body">
-						<form th:action="@{/sign_user}" method="POST">
+		
+	<!-- Sign up Page Modal -->
+	<div class="modal fade" id="exampleModal" tabindex="-1"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Sign up</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal"
+						aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<form th:action="@{/sign_user}" method="POST" enctype="multipart/form-data">
 
-							<!-- First & Last name -->
-							<div class="mb-1 row">
+						<div class="mb-1">
+							<input type="file" required class="form-control" id="myimage" name="file">
+						</div>
 
-								<!-- First name -->
-								<div class="col-12">
-									<label for="exampleInputEmail1" class="form-label">Name</label>
-									<input required type="text" class="form-control" name="CName"
-										id="exampleInputEmail1" aria-describedby="emailHelp">
-								</div>
 
+						<!-- First & Last name -->
+						<div class="mb-1 row">
+
+							<!-- First name -->
+							<div class="col-6">
+								<label for="exampleInputEmail1" class="form-label">Name</label>
+								<input required type="text" class="form-control" name="CName"
+									id="exampleInputEmail1" aria-describedby="emailHelp">
 							</div>
 
 							<!-- Password -->
-							<div class="mb-1">
+							<div class="mb-1 col-6">
 								<label for="exampleInputEmail1" class="form-label">Password</label>
 								<input required type="password" class="form-control"
 									name="Password" id="exampleInputEmail1"
 									aria-describedby="emailHelp">
 							</div>
+						</div>
 
-							<!-- Contact -->
-							<div class="mb-1">
-								<label for="exampleInputEmail1" class="form-label">Contact
-									no.</label> <input required type="text" class="form-control"
-									name="CContact" id="exampleInputEmail1"
-									aria-describedby="emailHelp">
-							</div>
 
-							<!-- Email -->
-							<div class="mb-1">
-								<label for="exampleInputEmail1" class="form-label">Email
-									address</label> <input required type="email" class="form-control"
-									name="Email" id="exampleInputEmail1"
-									aria-describedby="emailHelp">
-							</div>
+						<!-- Contact -->
+						<div class="mb-1">
+							<label for="exampleInputEmail1" class="form-label">Contact
+								no.</label> <input required type="text" class="form-control"
+								name="CContact" id="exampleInputEmail1"
+								aria-describedby="emailHelp">
+						</div>
 
-							<!-- Image -->
-							<div class="mb-1">
-								<label for="exampleInputEmail1" class="form-label">Image</label>
-								<input required type="text" class="form-control" name="Image"
-									id="exampleInputEmail1" aria-describedby="emailHelp">
-							</div>
+						<!-- Email -->
+						<div class="mb-1">
+							<label for="exampleInputEmail1" class="form-label">Email
+								address</label> <input required type="email" class="form-control"
+								name="Email" id="exampleInputEmail1"
+								aria-describedby="emailHelp">
+						</div>
 
+						<div class="row ">
 							<!-- Street -->
-							<div class="mb-1">
+							<div class="mb-1 col-6">
 								<label for="exampleInputEmail1" class="form-label">Street</label>
 								<input required type="text" class="form-control" name="CStreet"
 									id="exampleInputEmail1" aria-describedby="emailHelp">
 							</div>
 
 							<!-- Area -->
-							<div class="mb-1">
+							<div class="mb-1 col-6">
 								<label for="exampleInputEmail1" class="form-label">Area</label>
 								<input required type="text" class="form-control" name="CArea"
 									id="exampleInputEmail1" aria-describedby="emailHelp">
 							</div>
+						</div>
 
-							<!-- City -->
-							<div class="mb-1">
-								<label for="exampleInputEmail1" class="form-label">City</label>
-								<input required type="text" class="form-control" name="CCity"
-									id="exampleInputEmail1" aria-describedby="emailHelp">
-							</div>
+						<div class="row">
+						<!-- City -->
+						<div class="mb-1 col-6">
+							<label for="exampleInputEmail1" class="form-label">City</label> <input
+								required type="text" class="form-control" name="CCity"
+								id="exampleInputEmail1" aria-describedby="emailHelp">
+						</div>
 
-							<!-- State -->
-							<div class="mb-1">
-								<label for="exampleInputEmail1" class="form-label">State</label>
-								<input required type="text" class="form-control" name="CState"
-									id="exampleInputEmail1" aria-describedby="emailHelp">
-							</div>
+						<!-- State -->
+						<div class="mb-1 col-6">
+							<label for="exampleInputEmail1" class="form-label">State</label>
+							<input required type="text" class="form-control" name="CState"
+								id="exampleInputEmail1" aria-describedby="emailHelp">
+						</div>
+						</div>
 
-							<!-- Pincode -->
-							<div class="mb-1">
-								<label for="exampleInputEmail1" class="form-label">Pincode</label>
-								<input required type="text" class="form-control" name="CPincode"
-									id="exampleInputEmail1" aria-describedby="emailHelp">
-							</div>
-
-							<button type="submit" class="btn btn-outline-primary">Submit</button>
-							<button type="reset" class="btn btn-outline-danger">Reset</button>
-						</form>
-					</div>
+						<!-- Pincode -->
+						<div class="mb-1">
+							<label for="exampleInputEmail1" class="form-label">Pincode</label>
+							<input required type="text" class="form-control" name="CPincode"
+								id="exampleInputEmail1" aria-describedby="emailHelp">
+						</div>
+						<!-- Submit & Reset -->
+						<button type="submit" class="btn btn-outline-primary">Submit</button>
+						<button type="reset" class="btn btn-outline-danger">Reset</button>
+					</form>
 				</div>
 			</div>
 		</div>
+	</div>
+		
 	</section>
 </body>
 </html>

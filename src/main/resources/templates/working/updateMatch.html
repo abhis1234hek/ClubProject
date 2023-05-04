@@ -8,11 +8,11 @@
 </head>
 <body>
 	<section>
-			<h1>I am the page of update match</h1>
+			<h1>Update Matches</h1>
 			<div class="p-5">
 			<form th:action="@{'/user/updateMatch/'+${m.Mid}}" method="POST">
 
-											<!--Tournament name -->
+											<!--Name of Team A -->
 											<div class="mb-1">
 												<label for="exampleInputEmail1" class="form-label">Team A</label>
 												<input required type="text" class="form-control"
@@ -20,7 +20,7 @@
 													aria-describedby="emailHelp">
 											</div>
 											
-											<!--Tournament name -->
+											<!--Name of Team B -->
 											<div class="mb-1">
 												<label for="exampleInputEmail1" class="form-label">Team B</label>
 												<input required type="text" class="form-control"
@@ -28,7 +28,7 @@
 													aria-describedby="emailHelp">
 											</div>
 											
-											<!--Tournament name -->
+											<!--Match Date -->
 											<div class="mb-1">
 												<label for="exampleInputEmail1" class="form-label">Date</label>
 												<input required type="text" class="form-control"
@@ -36,7 +36,7 @@
 													aria-describedby="emailHelp">
 											</div>
 											
-											<!--Tournament name -->
+											<!--Match Place -->
 											<div class="mb-1">
 												<label for="exampleInputEmail1" class="form-label">Place</label>
 												<input required type="text" class="form-control"
@@ -45,11 +45,13 @@
 											</div>
 
 											<hr />
-											<!-- Close & Submit -->
+											<!-- Back & Submit -->
 											<div class="modal-footer">
+											<a th:href="@{'/user/viewTourMatches/'+${Mid}}">
 												<button type="button" class="btn btn-secondary"
-													data-bs-dismiss="modal">Close</button>
-												<button type="submit" class="btn btn-primary">Submit</button>
+													data-bs-dismiss="modal">Back</button>
+											</a>
+												<button type="submit" class="btn btn-primary">Update</button>
 											</div>
 										</form>
 										</div>

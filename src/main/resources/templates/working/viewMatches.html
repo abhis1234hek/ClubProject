@@ -8,11 +8,12 @@
 	rel="stylesheet"
 	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
 	crossorigin="anonymous">
-<title>show players</title>
+<title>show Matches</title>
 </head>
 <body>
 	<section style="width: 100%; height: 80vh;">
 
+        <!-- Add matches -->
 		<h1>Below are the matches under the tournament</h1>
 		<button data-bs-toggle="modal" data-bs-target="#staticBackdropTour"
 			type="button" class="btn btn-danger btn-sm">Add Match</button>
@@ -31,13 +32,17 @@
 				</thead>
 				<tbody>
 					<tr th:each="m:${matches}">
-						<th th:text="${m.Mid}"></th>
+						<th th:text="'MID_'+${m.Mid}"></th>
 						<td th:text="${m.Mmteama}+' vs '+${m.Mmteamb}"></td>
 						<td th:text="${m.Mmdate}"></td>
 						<td th:text="${m.Mmplace}"></td>
 						<td>
+						
+						<!-- Updates and Delete Matches -->
 							<a th:href="@{'/user/showupdatematch/'+${m.Mid}}"><button type="button"  class="btn btn-primary btn-sm">Update</button></a>
 							<a th:href="@{'/user/deleteMatch/'+${m.Mid}}"><button type="button" class="btn btn-danger btn-sm">Delete</button></a>
+							
+						<!-- View Player and Add Player -->
 							<a th:href="@{'/user/viewTPlayers/' + ${m.Mid}}"><button class="btn-sm btn-outline-dark" type="button">View Players</button></a>
 							<button type="button" data-bs-toggle="modal"
 								data-bs-target="#staticBackdropPlayer"
@@ -59,7 +64,7 @@
 									<div class="modal-body">
 										<form th:action="@{'/user/addPlayer/'+${m.Mid}}" method="POST">
 
-											<!-- Tournament Club -->
+											<!-- Player Name -->
 											<div class="mb-1">
 												<label for="exampleInputEmail1" class="form-label">Name</label>
 												<input required type="text" class="form-control"
@@ -67,7 +72,7 @@
 													aria-describedby="emailHelp">
 											</div>
 
-											<!--Tournament name -->
+											<!--Player Team -->
 											<div class="mb-1">
 												<label for="exampleInputEmail1" class="form-label">Team</label>
 												<input required type="text" class="form-control"
@@ -76,10 +81,11 @@
 											</div>
 
 											<hr />
-											<!-- Close & Submit -->
+											<!-- Back & Submit -->
 											<div class="modal-footer">
+											<button type="reset" class="btn btn-outline-info">Reset</button>
 												<button type="button" class="btn btn-secondary"
-													data-bs-dismiss="modal">Close</button>
+													data-bs-dismiss="modal">Back</button>
 												<button type="submit" class="btn btn-primary">Submit</button>
 											</div>
 										</form>
@@ -102,7 +108,7 @@
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="staticBackdropLabel">Match Info</h5>
+						<h5 class="modal-title" id="staticBackdropLabel">Add Match</h5>
 						<button type="button" class="btn-close" data-bs-dismiss="modal"
 							aria-label="Close"></button>
 					</div>
@@ -116,7 +122,7 @@
 									aria-describedby="emailHelp">
 							</div>
 
-							<!-- Tournament Club -->
+							<!-- Name of Team A -->
 							<div class="mb-1">
 								<label for="exampleInputEmail1" class="form-label">Team
 									A</label> <input required type="text" class="form-control"
@@ -124,7 +130,7 @@
 									aria-describedby="emailHelp">
 							</div>
 
-							<!--Tournament name -->
+							<!--Name of Team B -->
 							<div class="mb-1">
 								<label for="exampleInputEmail1" class="form-label">Team
 									B</label> <input required type="text" class="form-control"
@@ -132,7 +138,7 @@
 									aria-describedby="emailHelp">
 							</div>
 
-							<!-- Start Date -->
+							<!-- Match Date -->
 							<div class="mb-1">
 								<label for="exampleInputEmail1" class="form-label">Match
 									Date</label> <input required type="text" class="form-control"
@@ -140,7 +146,7 @@
 									aria-describedby="emailHelp">
 							</div>
 
-							<!-- End Date -->
+							<!-- Place -->
 							<div class="mb-1">
 								<label for="exampleInputEmail1" class="form-label">Place</label>
 								<input required type="text" class="form-control" name="Mmplace"
@@ -148,10 +154,11 @@
 							</div>
 
 							<hr />
-							<!-- Close & Submit -->
+							<!-- Back & Submit -->
 							<div class="modal-footer">
+							<button type="reset" class="btn btn-outline-info">Reset</button>
 								<button type="button" class="btn btn-secondary"
-									data-bs-dismiss="modal">Close</button>
+									data-bs-dismiss="modal">Back</button>
 								<button type="submit" class="btn btn-primary">Submit</button>
 							</div>
 						</form>
@@ -160,6 +167,11 @@
 			</div>
 		</div>
 
+											<!-- Back  -->
+											<div class="modal-footer">
+												<a th:href="@{/user/viewclubtour}"><button type="button" class="btn btn-secondary"
+													data-bs-dismiss="modal">Back</button></a>
+											</div>
 	</section>
 </body>
 </html>

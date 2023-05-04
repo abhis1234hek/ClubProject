@@ -8,13 +8,13 @@
 </head>
 <body>
 	<section>
-		<h1>I am the page of update tournament</h1>
+		<h1>Update Tournament</h1>
 
 		<div class="p-5">
 		<form th:action="@{'/user/updateTour/'+${tour.Tid}}" method="POST">
 		
 		
-			<!--Tournament name -->
+			<!--Tournament ID -->
 			<div class="mb-1">
 				<input
 					required type="hidden" class="form-control" name="Tid"
@@ -22,7 +22,7 @@
 					aria-describedby="emailHelp">
 			</div>
 		
-			<!--Tournament name -->
+			<!--Club Name -->
 			<div class="mb-1">
 				<input
 					required type="hidden" class="form-control" name="TClub"
@@ -38,7 +38,15 @@
 					aria-describedby="emailHelp">
 			</div>
 			
-			<!--Tournament name -->
+			<!--Domain -->
+			<div class="mb-1">
+				<label for="exampleInputEmail1" class="form-label">Domain</label> <input
+					required type="text" class="form-control" name="TDomain"
+					th:value="${tour.TDomain}" id="exampleInputEmail1"
+					aria-describedby="emailHelp">
+			</div>
+			
+			<!--Start Date -->
 			<div class="mb-1">
 				<label for="exampleInputEmail1" class="form-label">Start Date</label> <input
 					required type="text" class="form-control" name="TSDate"
@@ -46,7 +54,7 @@
 					aria-describedby="emailHelp">
 			</div>
 			
-			<!--Tournament name -->
+			<!--End Date -->
 			<div class="mb-1">
 				<label for="exampleInputEmail1" class="form-label">End Date</label> <input
 					required type="text" class="form-control" name="TEDate"
@@ -54,7 +62,7 @@
 					aria-describedby="emailHelp">
 			</div>
 			
-			<!--Tournament name -->
+			<!--Country -->
 			<div class="mb-1">
 				<label for="exampleInputEmail1" class="form-label">Country</label> <input
 					required type="text" class="form-control" name="TPlace"
@@ -62,11 +70,11 @@
 					aria-describedby="emailHelp">
 			</div>
 
-			<!-- Close & Submit -->
+			<!-- Back & Submit -->
 			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary"
-					data-bs-dismiss="modal">Close</button>
-				<button type="submit" class="btn btn-primary">Submit</button>
+				<a th:href="@{/user/viewclubtour}"><button type="button" class="btn btn-secondary"
+					data-bs-dismiss="modal">Back</button></a>
+				<button type="submit" class="btn btn-primary">Update</button>
 			</div>
 		</form>
 		</div>

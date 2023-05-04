@@ -14,10 +14,12 @@
 	<section style="width: 100%; height: 80vh;">
 
 		<h1>Below are the sponsors under the tournament</h1>
+		
+		<!-- Add Sponsor -->
 		<button data-bs-toggle="modal" data-bs-target="#staticBackdropTour"
 			type="button" class="btn btn-danger btn-sm">Add Sponsor</button>
 
-		<!-- Showing matches -->
+		<!-- Showing Sponsor -->
 		<div class="row col-10 mx-auto mt-5">
 			<table class="table">
 				<thead>
@@ -25,6 +27,7 @@
 						<th scope="col">Sponsor id</th>
 						<th scope="col">Sponsor Name</th>
 						<th scope="col">Sponsor Location</th>
+						<th scope="col">Sponsor Amount</th>
 						<th>Action</th>
 					</tr>
 				</thead>
@@ -33,6 +36,9 @@
 						<th th:text="${s.SPid}"></th>
 						<th th:text="${s.SPName}"></th>
 						<th th:text="${s.SPLocation}"></th>
+						<th th:text="${s.SPAmount}"></th>
+						
+						<!-- Update and Delete Sponsor -->
 						<td><a th:href="@{'/user/showupdatesponsor/'+${s.SPid}}"><button
 									type="button" class="btn btn-primary btn-sm">Update</button></a> <a
 							th:href="@{'/user/deleteSponsor/'+${s.SPid}}"><button
@@ -45,22 +51,21 @@
 
 
 
-		<!-- Update match modal -->
+		<!-- Add Sponsor  modal -->
 		<div class="modal fade" id="staticBackdropTour"
 			data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
 			aria-labelledby="staticBackdropLabel" aria-hidden="true">
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="staticBackdropLabel">Sponsors
-							Info</h5>
+						<h5 class="modal-title" id="staticBackdropLabel">Add Sponsors</h5>
 						<button type="button" class="btn-close" data-bs-dismiss="modal"
 							aria-label="Close"></button>
 					</div>
 					<div class="modal-body">
 						<form th:action="@{/user/addSponsor}" method="POST">
 
-							<!-- Tournament Id -->
+							<!-- Sponsor Name -->
 							<div class="mb-1">
 								<label for="exampleInputEmail1" class="form-label">Sponsor
 									Name</label> <input required type="text" class="form-control"
@@ -68,11 +73,19 @@
 									aria-describedby="emailHelp">
 							</div>
 
-							<!-- Tournament Id -->
+							<!-- Sponsor Location -->
 							<div class="mb-1">
 								<label for="exampleInputEmail1" class="form-label">Sponsor
 									Location</label> <input required type="text" class="form-control"
 									name="SPLocation" id="exampleInputEmail1"
+									aria-describedby="emailHelp">
+							</div>
+							
+							<!-- Sponsor Amount -->
+							<div class="mb-1">
+								<label for="exampleInputEmail1" class="form-label">Sponsor
+									Amount</label> <input required type="text" class="form-control"
+									name="SPAmount" id="exampleInputEmail1"
 									aria-describedby="emailHelp">
 							</div>
 
@@ -82,12 +95,14 @@
 									name="Tourid" id="exampleInputEmail1"
 									aria-describedby="emailHelp">
 							</div>
+							
 
 							<hr />
-							<!-- Close & Submit -->
+							<!-- Back & Submit -->
 							<div class="modal-footer">
+							<button type="reset" class="btn btn-outline-info">Reset</button>
 								<button type="button" class="btn btn-secondary"
-									data-bs-dismiss="modal">Close</button>
+									data-bs-dismiss="modal">Back</button>
 								<button type="submit" class="btn btn-primary">Submit</button>
 							</div>
 						</form>
@@ -95,7 +110,11 @@
 				</div>
 			</div>
 		</div>
-
+<!-- Back  -->
+											<div class="modal-footer">
+												<a th:href="@{/user/viewclubtour}"><button type="button" class="btn btn-secondary"
+													data-bs-dismiss="modal">Back</button></a>
+											</div>
 	</section>
 </body>
 </html>

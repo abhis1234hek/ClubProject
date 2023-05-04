@@ -31,6 +31,7 @@ public class Tournament
 	private int Tid;
 	private String TClub;
 	private String TName;
+	private String TDomain;
 	private String TSDate;
 	private String TEDate;
 	private String TPlace;

@@ -27,6 +27,7 @@ public class Sponsor
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int SPid;
 	private String SPName;
+	private String SPAmount;
 	private String SPLocation;
 	
 	@JsonBackReference

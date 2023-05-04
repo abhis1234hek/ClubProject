@@ -4,18 +4,18 @@
 <head>
 <meta charset="UTF-8" />
 
-<title>update sponsor page</title>
+<title>Update Main Player</title>
 </head>
 <body>
 	<section>
-			<h1>I am the page of update sponsor</h1>
+			<h1>Update Club Player</h1>
 			<div class="p-5">
 			<form th:action="@{'/user/updateMainPlayer/'+${p.CPid}}" method="POST">
 			
 							<!-- First & Last name -->
 							<div class="mb-1 row">
 
-								<!-- First name -->
+								<!-- Player Name -->
 								<div class="col-12">
 									<label for="exampleInputEmail1" class="form-label">Player
 										Name</label> <input required type="text" class="form-control"
@@ -51,8 +51,7 @@
 
 							<!-- Image -->
 							<div class="mb-1">
-								<label for="exampleInputEmail1" class="form-label">Image</label>
-								<input required type="text" class="form-control" name="CPImage"
+								<input required type="hidden" class="form-control" name="CPImage"
 									id="exampleInputEmail1" th:value="${p.CPImage}" aria-describedby="emailHelp">
 							</div>
 
@@ -70,11 +69,11 @@
 									name="CPAddress" th:value="${p.CPAddress}" id="exampleInputEmail1"
 									aria-describedby="emailHelp">
 							</div>
-							<!-- Close & Submit -->	
+							<!-- Back & Submit -->	
 							<div class="modal-footer">
-								<button type="button" class="btn btn-secondary"
-									data-bs-dismiss="modal">Close</button>
-								<button type="submit" class="btn btn-primary">Submit</button>
+								<a th:href="@{/user/viewPlayers}"><button type="button" class="btn btn-secondary"
+													data-bs-dismiss="modal">Back</button></a>
+								<button type="submit" class="btn btn-primary">Update</button>
 							</div>
 						</form>
 					</div>

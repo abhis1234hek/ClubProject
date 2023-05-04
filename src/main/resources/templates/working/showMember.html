@@ -1,13 +1,69 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" 
 				th:replace="base::layout(~{::section})">
-<head>`
+<head>
 <meta charset="UTF-8" />
-<title>Home page</title>
+<title>Membership page</title>
 </head>
 <body>
-	<section class="mb-5">
-		<h2>I am show membership page</h2>
+	<section  style="width: 100%; height: 100%; background:#353935">
+		<div class="container">
+		<h2 style=" font-size: 32px; padding: 30px 0; text-align:center; color:white;">CHOOSE YOUR SUBSCRIPTION</h2>
+		<div class="row">
+		<div class="col-2"></div>
+		<div class="card col-4" style="background:#C0C0C0; border-radius: 10px; color:#fff; text-align: center;">
+		<img src="../images/membership/sliver.jpg"  alt="...">
+		<ul style="text-align: left; margin:20px 0; color:#ddd;">
+		<li style="color: #e33058; font-weight:bold;"><span style="color: black; font-size:22px;">3 Months</span><i class="fa-solid fa-check-circle fa-2x" style="color: #7b3f00; margin-left: 250px;"></i></li>
+	    <li style="color: #e33058; font-weight:bold;"><span style="color: black; font-size:22px;">2 Outdoor Games</span><i class="fa-solid fa-check-circle fa-2x" style="color: #7b3f00; margin-left: 167px;"></i></li>
+		<li style="color: #e33058; font-weight:bold;"><span style="color: black; font-size:22px;">2 Indoor Games</span><i class="fa-solid fa-check-circle fa-2x" style="color: #7b3f00; margin-left: 185px;"></i></li>
+		<li style="color: #e33058; font-weight:bold;"><span style="color: black; font-size:22px;">3 Intra-Club Tournament</span><i class="fa-solid fa-check-circle fa-2x" style="color: #7b3f00; margin-left: 93px;"></i></li>
+		<li style="color: #e33058; font-weight:bold;"><span style="color: black; font-size:22px;">1 Inter-Club Tournament</span><i class="fa-solid fa-check-circle fa-2x" style="color: #7b3f00; margin-left: 95px;"></i></li>
+		</ul>
+		<button type="button" class="btn btn-danger mb-3" style="font-size:20px;"><i class="fa fa-rupee"></i> 2500/-</button>
+		<span><a th:href="@{/showRegister}"><button type="button" class="btn btn-outline-primary mb-3"><i class="fa fa-shopping-cart"></i> Buy Now</button></a></span>
+		</div>
+		<div class="card col-4 ms-5" style="background:#b09a2e; border-radius: 10px; color:#fff; text-align: center;">
+		<img src="../images/membership/gold.png" alt="...">
+		<ul style="text-align: left; margin:20px 0; color:#ddd;">
+		<li style="color: #e33058; font-weight:bold;"><span style="color: black; font-size:22px;">6 Months</span><i class="fa-solid fa-check-circle fa-2x" style="color: #7b3f00; margin-left: 250px;"></i></li>
+	    <li style="color: #e33058; font-weight:bold;"><span style="color: black; font-size:22px;">3 Outdoor Games</span><i class="fa-solid fa-check-circle fa-2x" style="color: #7b3f00; margin-left: 167px;"></i></li>
+		<li style="color: #e33058; font-weight:bold;"><span style="color: black; font-size:22px;">3 Indoor Games</span><i class="fa-solid fa-check-circle fa-2x" style="color: #7b3f00; margin-left: 185px;"></i></li>
+		<li style="color: #e33058; font-weight:bold;"><span style="color: black; font-size:22px;">5 Intra-Club Tournament</span><i class="fa-solid fa-check-circle fa-2x" style="color: #7b3f00; margin-left: 93px;"></i></li>
+		<li style="color: #e33058; font-weight:bold;"><span style="color: black; font-size:22px;">3 Inter-Club Tournament</span><i class="fa-solid fa-check-circle fa-2x" style="color: #7b3f00; margin-left: 95px;"></i></li>
+		</ul>
+		<button type="button" class="btn btn-danger mb-3" style="font-size:20px;"><i class="fa fa-rupee"></i> 4500/-</button>
+		<span><a th:href="@{/showRegister}"><button type="button" class="btn btn-outline-primary mb-3"><i class="fa fa-shopping-cart"></i> Buy Now</button></a></span>
+		</div>
+		</div>
+		<div class="row m-auto">
+		<div class="col-2"></div>
+		<div class="card col-4 mt-5 mb-5" style="background:#e5e4e2; border-radius: 10px; color:#fff; text-align: center;">
+		<img src="../images/membership/platinum.png" alt="...">
+		<ul style="text-align: left; margin:20px 0; color:#ddd;">
+		<li style="color: #e33058; font-weight:bold;"><span style="color: black; font-size:22px;">9 Months</span><i class="fa-solid fa-check-circle fa-2x" style="color: #7b3f00; margin-left: 240px;"></i></li>
+	    <li style="color: #e33058; font-weight:bold;"><span style="color: black; font-size:22px;">4 Outdoor Games</span><i class="fa-solid fa-check-circle fa-2x" style="color: #7b3f00; margin-left: 157px;"></i></li>
+		<li style="color: #e33058; font-weight:bold;"><span style="color: black; font-size:22px;">4 Indoor Games</span><i class="fa-solid fa-check-circle fa-2x" style="color: #7b3f00; margin-left: 175px;"></i></li>
+		<li style="color: #e33058; font-weight:bold;"><span style="color: black; font-size:22px;">All Intra-Club Tournament</span><i class="fa-solid fa-check-circle fa-2x" style="color: #7b3f00; margin-left: 68px;"></i></li>
+		<li style="color: #e33058; font-weight:bold;"><span style="color: black; font-size:22px;">5 Inter-Club Tournament</span><i class="fa-solid fa-check-circle fa-2x" style="color: #7b3f00; margin-left: 84px;"></i></li>
+		</ul>
+		<button type="button" class="btn btn-danger mb-3" style="font-size:20px;"><i class="fa fa-rupee"></i> 7000/-</button>
+		<span><a th:href="@{/showRegister}"><button type="button" class="btn btn-outline-primary mb-3"><i class="fa fa-shopping-cart"></i> Buy Now</button></a></span>
+		</div>
+		<div class="card col-4 ms-5 mt-5 mb-5" style="background:#003fba; border-radius: 10px; color:#fff; text-align: center;">
+		<img src="../images/membership/diamond.png" alt="...">
+		<ul style="text-align: left; margin:20px 0; color:#ddd;">
+		<li style="color: #e33058; font-weight:bold;"><span style="color: black; font-size:22px;">12 Months</span><i class="fa-solid fa-check-circle fa-2x" style="color: #7b3f00; margin-left: 230px;"></i></li>
+	    <li style="color: #e33058; font-weight:bold;"><span style="color: black; font-size:22px;">5 Outdoor Games</span><i class="fa-solid fa-check-circle fa-2x" style="color: #7b3f00; margin-left: 159px;"></i></li>
+		<li style="color: #e33058; font-weight:bold;"><span style="color: black; font-size:22px;">5 Indoor Games</span><i class="fa-solid fa-check-circle fa-2x" style="color: #7b3f00; margin-left: 177px;"></i></li>
+		<li style="color: #e33058; font-weight:bold;"><span style="color: black; font-size:22px;">All Intra-Club Tournament</span><i class="fa-solid fa-check-circle fa-2x" style="color: #7b3f00; margin-left: 70px;"></i></li>
+		<li style="color: #e33058; font-weight:bold;"><span style="color: black; font-size:22px;">All Inter-Club Tournament</span><i class="fa-solid fa-check-circle fa-2x" style="color: #7b3f00; margin-left: 72px;"></i></li>
+		</ul>
+		<button type="button" class="btn btn-danger mb-3" style="font-size:20px;"><i class="fa fa-rupee"></i> 9000/-</button>
+		<span><a th:href="@{/showRegister}"><button type="button" class="btn btn-outline-primary mb-3"><i class="fa fa-shopping-cart"></i> Buy Now</button></a></span>
+		</div>
+		</div>
+		</div>
 	</section>
 </body>
 </html>
