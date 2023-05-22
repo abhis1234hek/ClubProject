@@ -1,83 +1,71 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"
-	th:replace="~{base::layout(~{::section})}">
-<head>
-<meta charset="UTF-8" />
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base::layout(~{::section})}">
 
-<title>update tournament page</title>
+<head>
+	<meta charset="UTF-8" />
+
+	<title>update tournament page</title>
 </head>
+
 <body>
 	<section>
 		<h1>Update Tournament</h1>
 
 		<div class="p-5">
-		<form th:action="@{'/user/updateTour/'+${tour.Tid}}" method="POST">
-		
-		
-			<!--Tournament ID -->
-			<div class="mb-1">
-				<input
-					required type="hidden" class="form-control" name="Tid"
-					th:value="${tour.Tid}" id="exampleInputEmail1"
-					aria-describedby="emailHelp">
-			</div>
-		
-			<!--Club Name -->
-			<div class="mb-1">
-				<input
-					required type="hidden" class="form-control" name="TClub"
-					th:value="${tour.TClub}" id="exampleInputEmail1"
-					aria-describedby="emailHelp">
-			</div>
-			
-			<!--Tournament name -->
-			<div class="mb-1">
-				<label for="exampleInputEmail1" class="form-label">Tournament name</label> <input
-					required type="text" class="form-control" name="TName"
-					th:value="${tour.TName}" id="exampleInputEmail1"
-					aria-describedby="emailHelp">
-			</div>
-			
-			<!--Domain -->
-			<div class="mb-1">
-				<label for="exampleInputEmail1" class="form-label">Domain</label> <input
-					required type="text" class="form-control" name="TDomain"
-					th:value="${tour.TDomain}" id="exampleInputEmail1"
-					aria-describedby="emailHelp">
-			</div>
-			
-			<!--Start Date -->
-			<div class="mb-1">
-				<label for="exampleInputEmail1" class="form-label">Start Date</label> <input
-					required type="text" class="form-control" name="TSDate"
-					th:value="${tour.TSDate}" id="exampleInputEmail1"
-					aria-describedby="emailHelp">
-			</div>
-			
-			<!--End Date -->
-			<div class="mb-1">
-				<label for="exampleInputEmail1" class="form-label">End Date</label> <input
-					required type="text" class="form-control" name="TEDate"
-					th:value="${tour.TEDate}" id="exampleInputEmail1"
-					aria-describedby="emailHelp">
-			</div>
-			
-			<!--Country -->
-			<div class="mb-1">
-				<label for="exampleInputEmail1" class="form-label">Country</label> <input
-					required type="text" class="form-control" name="TPlace"
-					th:value="${tour.TPlace}" id="exampleInputEmail1"
-					aria-describedby="emailHelp">
-			</div>
+			<form th:action="@{'/user/updateTour/'+${tour.Tid}}" method="POST">
 
-			<!-- Back & Submit -->
-			<div class="modal-footer">
-				<a th:href="@{/user/viewclubtour}"><button type="button" class="btn btn-secondary"
-					data-bs-dismiss="modal">Back</button></a>
-				<button type="submit" class="btn btn-primary">Update</button>
-			</div>
-		</form>
+
+				<!--Tournament ID -->
+				<div class="mb-1">
+					<input required type="hidden" class="form-control" name="Tid" th:value="${tour.Tid}"
+						id="exampleInputId">
+				</div>
+
+				<!--Club Name -->
+				<div class="mb-1">
+					<input required type="hidden" class="form-control" name="TClub" th:value="${tour.TClub}"
+						id="exampleInputClub">
+				</div>
+
+				<!--Tournament name -->
+				<div class="mb-1">
+					<label for="exampleInputName" class="form-label">Tournament name</label> <input required type="text"
+						class="form-control" name="TName" th:value="${tour.TName}" id="exampleInputName">
+				</div>
+
+				<!--Domain -->
+				<div class="mb-1">
+					<label for="exampleInputDomain" class="form-label">Domain</label> <input required type="text"
+						class="form-control" name="TDomain" th:value="${tour.TDomain}" id="exampleInputDomain">
+				</div>
+
+				<!--Start Date -->
+				<div class="mb-1">
+					<label for="exampleInputDate" class="form-label">Start Date</label> <input required type="text"
+						class="form-control" name="TSDate" th:value="${tour.TSDate}" id="exampleInputDate">
+				</div>
+
+				<!--End Date -->
+				<div class="mb-1">
+					<label for="exampleInputDate" class="form-label">End Date</label> <input required type="text"
+						class="form-control" name="TEDate" th:value="${tour.TEDate}" id="exampleInputDate">
+				</div>
+
+				<!--Country -->
+				<div class="mb-1">
+					<label for="exampleInputCountry" class="form-label">Country</label> <input required type="text"
+						class="form-control" name="TPlace" th:value="${tour.TPlace}" id="exampleInputCountry">
+				</div>
+
+				<!-- Back & Submit -->
+				<div class="modal-footer">
+					<a th:href="@{/user/viewclubtour}"><button type="button" class="btn btn-secondary"
+							data-bs-dismiss="modal">Back</button></a>
+					<button type="submit" class="btn btn-primary">Update</button>
+				</div>
+			</form>
 		</div>
 	</section>
 </body>
+
 </html>

@@ -1,15 +1,13 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"
-	th:replace="base::layout(~{::section})">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+
 <head>
-<meta charset="UTF-8" />
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-	crossorigin="anonymous">
-<title>Show Tour players</title>
+	<meta charset="UTF-8" />
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<title>Show Tour players</title>
 </head>
+
 <body>
 
 	<!-- Showing Team Player -->
@@ -30,13 +28,11 @@
 						<td th:text="${p.Mpname}"></td>
 						<td th:text="${p.Mpteam}"></td>
 						<td>
-							<!-- Update and Delete Player--> <a
-							th:href="@{'/user/updatetplayer/'+${p.Mpid}}"><button
-									type="button" data-bs-toggle="modal"
-									data-bs-target="#staticBackdropTour"
+							<!-- Update and Delete Player--> <a th:href="@{'/user/updatetplayer/'+${p.Mpid}}"><button
+									type="button" data-bs-toggle="modal" data-bs-target="#staticBackdropTour"
 									class="btn btn-outline-success btn-sm">Update</button></a> <a
-							th:href="@{'/user/deleteplayer/' + ${p.Mpid}}"><button
-									type="button" class="btn btn-danger btn-sm">Delete</button></a>
+								th:href="@{'/user/deleteplayer/' + ${p.Mpid}}"><button type="button"
+									class="btn btn-danger btn-sm">Delete</button></a>
 						</td>
 
 
@@ -46,11 +42,11 @@
 		</div>
 		<!-- Back  -->
 		<div class="modal-footer">
-		<a th:href="@{'/user/viewTourMatches/'+${Mid}}">
-			<button type="button" class="btn btn-secondary"
-				data-bs-dismiss="modal">Back</button>
+			<a th:href="@{'/user/viewTourMatches/'+${Mid}}">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Back</button>
 			</a>
 		</div>
 	</section>
 </body>
+
 </html>

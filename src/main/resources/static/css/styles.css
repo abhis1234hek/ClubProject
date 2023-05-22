@@ -1,72 +1,68 @@
-.sportsback
-{
-	background:url(../images/sports.jpg);
-	background-size:cover;
-	background-position:center;
+.sportsback {
+	background: url(../images/sports.jpg);
+	background-size: cover;
+	background-position: center;
 }
 
-.clubback
-{
+.clubback {
 	background: url(../images/clubs.jpg);
-	background-size:cover;
-	background-position:center;
+	background-size: cover;
+	background-position: center;
 }
 
-.tourback
-{
-	background:url(../images/trophy.jpg);
-	background-size:cover;
-	background-position:center;
+.tourback {
+	background: url(../images/trophy.jpg);
+	background-size: cover;
+	background-position: center;
 }
 
-.kitback
-{
-	background:url(../images/kitcl.jpg);
-	background-size:cover;
-	height:253px;
-	background-position:center;
+.kitback {
+	background: url(../images/kitcl.jpg);
+	background-size: cover;
+	height: 253px;
+	background-position: center;
 }
 
-.registerback
-{
-	background:url(../images/register.jpg);
-	background-size:cover;
-	background-position:center;
+.registerback {
+	background: url(../images/register.jpg);
+	background-size: cover;
+	background-position: center;
 }
 
-.memberback
-{
-	background:url(../images/member.jpg);
-	background-size:cover;
-	background-position:center;
+.memberback {
+	background: url(../images/member.jpg);
+	background-size: cover;
+	background-position: center;
 }
-.contactimage
-{
-	background:url(../images/contact.jpg);
+
+.contactimage {
+	background: url(../images/contact.jpg);
 }
-.conaddress
-{
-	padding:10px;
-    background-color: #a9a9a9;
+
+.conaddress {
+	padding: 10px;
+	background-color: #a9a9a9;
 }
-.bg
-{
-	background:url(../images/bg.jpeg);
+
+.bg {
+	background: url(../images/bg.jpeg);
 }
-.crikit{
-	background-size:cover;
-	height:500px;
-	background-position:center;
+
+.crikit {
+	background-size: cover;
+	height: 500px;
+	background-position: center;
 }
+
 #s1:checked~.cards #slide4,
 #s2:checked~.cards #slide5,
 #s3:checked~.cards #slide1,
 #s4:checked~.cards #slide2,
 #s5:checked~.cards #slide3 {
-    box-shadow: 0 15px 35px 0 rgba(0, 0, 0, 45%);
-    transform: translate3d(-70%, 0, -220px);
-    --current-color1: #ECEAED;
-    --current-color2: #404457;
+	box-shadow: 0 15px 35px 0 rgba(0, 0, 0, 45%);
+	transform: translate3d(-70%, 0, -220px);
+	--current-color1: #ECEAED;
+	--current-color2: #404457;
 }
 
 #s1:checked~.cards #slide5,
@@ -74,10 +70,10 @@
 #s3:checked~.cards #slide2,
 #s4:checked~.cards #slide3,
 #s5:checked~.cards #slide4 {
-    box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 45%);
-    transform: translate3d(-35%, 0, -120px);
-    --current-color1: #ECEAED;
-    --current-color2: #404457;
+	box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 45%);
+	transform: translate3d(-35%, 0, -120px);
+	--current-color1: #ECEAED;
+	--current-color2: #404457;
 }
 
 #s1:checked~.cards #slide1,
@@ -85,10 +81,10 @@
 #s3:checked~.cards #slide3,
 #s4:checked~.cards #slide4,
 #s5:checked~.cards #slide5 {
-    box-shadow: 0 25px 50px 0 rgba(0, 0, 0, 50%);
-    transform: translate3d(0, 0, 0);
-    --current-color1: #fad00c;
-    --current-color2: #ECEAED;
+	box-shadow: 0 25px 50px 0 rgba(0, 0, 0, 50%);
+	transform: translate3d(0, 0, 0);
+	--current-color1: #fad00c;
+	--current-color2: #ECEAED;
 }
 
 #s1:checked~.cards #slide2,
@@ -96,10 +92,10 @@
 #s3:checked~.cards #slide4,
 #s4:checked~.cards #slide5,
 #s5:checked~.cards #slide1 {
-    box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 45%);
-    transform: translate3d(35%, 0, -120px);
-    --current-color1: #ECEAED;
-    --current-color2: #404457;
+	box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 45%);
+	transform: translate3d(35%, 0, -120px);
+	--current-color1: #ECEAED;
+	--current-color2: #404457;
 }
 
 #s1:checked~.cards #slide3,
@@ -107,32 +103,56 @@
 #s3:checked~.cards #slide5,
 #s4:checked~.cards #slide1,
 #s5:checked~.cards #slide2 {
-    box-shadow: 0 15px 35px 0 rgba(0, 0, 0, 45%);
-    transform: translate3d(70%, 0, -220px);
-    --current-color1: #ECEAED;
-    --current-color2: #404457;
+	box-shadow: 0 15px 35px 0 rgba(0, 0, 0, 45%);
+	transform: translate3d(70%, 0, -220px);
+	--current-color1: #ECEAED;
+	--current-color2: #404457;
 }
 
-.dots div{
+.dots div {
 
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    margin-bottom: 10px;
-}
-.dots div:nth-child(1){
-
-    background-color: var(--current-color1);
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	margin-bottom: 10px;
 }
 
-.dots div:nth-child(2){
+.dots div:nth-child(1) {
 
-    background-color: #5B85F9;
+	background-color: var(--current-color1);
 }
 
-.dots div:nth-child(3){
+.dots div:nth-child(2) {
 
-    background-color: #000;
+	background-color: #5B85F9;
 }
-  
-  
+
+.dots div:nth-child(3) {
+
+	background-color: #000;
+}
+
+.container:hover>.card {
+	cursor: pointer;
+	transform: rotateY(180deg) rotateZ(180deg);
+}
+
+
+.front,
+.back {
+	height: 100%;
+	width: 100%;
+	border-radius: 2rem;
+	box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.25);
+	position: absolute;
+	backface-visibility: hidden;
+}
+
+.wel {
+
+	background: url('../images/welcome.jpeg');
+	height: 650px;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}

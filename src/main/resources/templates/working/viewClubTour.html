@@ -1,19 +1,17 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"
-	th:replace="base::layout(~{::section})">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+
 <head>
-<meta charset="UTF-8" />
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-	crossorigin="anonymous">
-<title>Show tournament page</title>
+	<meta charset="UTF-8" />
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<title>Show tournament page</title>
 </head>
+
 <body>
 	<section style="width: 100%; height: 80vh;">
 
-             <!-- Showing Tournament -->
+		<!-- Showing Tournament -->
 		<div class="row col-10 mx-auto mt-5">
 			<table class="table">
 				<thead>
@@ -29,34 +27,39 @@
 				</thead>
 				<tbody>
 					<tr th:each="t:${tournaments}">
-						<th th:text="'TID_'+${t.Tid}" ></th>
-						<td  th:text="${t.TName}"></td>
-						<td  th:text="${t.TDomain}"></td>
-						<td  th:text="${t.TSDate}"></td>
-						<td  th:text="${t.TEDate}"></td>
+						<th th:text="'TID_'+${t.Tid}"></th>
+						<td th:text="${t.TName}"></td>
+						<td th:text="${t.TDomain}"></td>
+						<td th:text="${t.TSDate}"></td>
+						<td th:text="${t.TEDate}"></td>
 						<td th:text="${t.TPlace}"></td>
-						<td >
-						
-						<!-- Update and Delete Tournament-->
-							<a th:href="@{'/user/showupdatetour/'+${t.Tid}}"><button type="button" class="btn btn-primary btn-sm" >Update</button></a>
-							<a th:href="@{'/user/deleteTour/'+${t.Tid}}"><button type="button" class="btn btn-danger btn-sm">Delete</button></a>
-							
-					    <!-- View matches and View Sponsors -->
-							<a th:href="@{'/user/viewTourMatches/' + ${t.Tid}}"><button type="button" class="btn btn-danger btn-sm" >View Matches</button></a>
-							<a th:href="@{'/user/viewTourSponsor/' + ${t.Tid}}"><button type="button" class="btn btn-danger btn-sm" >View sponsors</button></a>
-					
-						
+						<td>
+
+							<!-- Update and Delete Tournament-->
+							<a th:href="@{'/user/showupdatetour/'+${t.Tid}}"><button type="button"
+									class="btn btn-primary btn-sm">Update</button></a>
+							<a th:href="@{'/user/deleteTour/'+${t.Tid}}"><button type="button"
+									class="btn btn-danger btn-sm">Delete</button></a>
+
+							<!-- View matches and View Sponsors -->
+							<a th:href="@{'/user/viewTourMatches/' + ${t.Tid}}"><button type="button"
+									class="btn btn-danger btn-sm">View Matches</button></a>
+							<a th:href="@{'/user/viewTourSponsor/' + ${t.Tid}}"><button type="button"
+									class="btn btn-danger btn-sm">View sponsors</button></a>
+
+
 						</td>
 					</tr>
 				</tbody>
 			</table>
-			
+
 		</div>
 		<!-- Back-->
-											<div class="modal-footer">
-												<a th:href="@{/user/index}"><button type="button" class="btn btn-secondary"
-													data-bs-dismiss="modal">Back</button></a>
-											</div>
+		<div class="modal-footer">
+			<a th:href="@{/user/index}"><button type="button" class="btn btn-secondary"
+					data-bs-dismiss="modal">Back</button></a>
+		</div>
 	</section>
 </body>
+
 </html>

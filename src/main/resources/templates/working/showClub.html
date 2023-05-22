@@ -1,13 +1,14 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"
-	th:replace="base::layout(~{::section})">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+
 <head>
-<meta charset="UTF-8" />
-<title>Home page Club Show</title>
+	<meta charset="UTF-8" />
+	<title>Home page Club Show</title>
 </head>
+
 <body>
 
-<!-- Showing Club on Home Page -->
+	<!-- Showing Club on Home Page -->
 	<section class="mb-5 ps-1 pe-1 " style="width: 99%; height: 60vh;">
 
 
@@ -15,8 +16,7 @@
 			<div class="row shadow-lg mb-3">
 				<div class="col-2 row ">
 					<img src="..." th:src="@{'images/users/'+${c.Image}}"
-						style="width: 11rem; height: 9rem; border-radius: 1rem;" class=""
-						alt="...">
+						style="width: 11rem; height: 9rem; border-radius: 1rem;" class="" alt="...">
 				</div>
 				<div class="col-10 row">
 					<div class="row mt-2 mb-5">
@@ -57,4 +57,5 @@
 
 
 </body>
+
 </html>

@@ -7,8 +7,6 @@ import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.security.Principal;
 import java.util.List;
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -32,6 +30,7 @@ import com.pro.club.entities.secB.Sponsor;
 import com.pro.club.entities.secB.Tmatch;
 import com.pro.club.entities.secB.Tournament;
 import com.pro.club.entities.secB.Tplayers;
+import com.pro.club.service.UserService;
 
 @Controller
 @RequestMapping("/user")
@@ -40,6 +39,9 @@ public class UserController
 	// -----------------| Repository objects for doing CRUD with the database |-----------------
 	@Autowired
 	private UserRepository userRepository;
+	
+	@Autowired
+	private UserService userService;
 	
 	@Autowired
 	private TournamentRepository tournamentRepository;

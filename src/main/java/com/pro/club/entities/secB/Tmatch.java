@@ -2,12 +2,11 @@ package com.pro.club.entities.secB;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
-
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -30,9 +29,12 @@ import lombok.ToString;
 public class Tmatch 
 {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column (name="Match Id")
 	private int Mid;
+	@Column (name="Team A")
 	private String Mmteama;
+	@Column (name="Team B")
 	private String Mmteamb;
 	private String Mmdate;
 	private String Mmplace;

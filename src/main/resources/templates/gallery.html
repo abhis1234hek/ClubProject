@@ -1,86 +1,144 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" 
-				th:replace="base::layout(~{::section})">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+
 <head>
-<meta charset="UTF-8" />
-<title>Home page</title>
+	<meta charset="UTF-8" />
+	<title>Gallery page</title>
 </head>
+
 <body>
-	<section class="mb-5 ms-3">
-		<div class="row mt-5 col-12 mx-auto">
-			<div class="row">
-				<div class="col-3">
-				 	<img src="..." th:src="@{'images/club.jpg'}" style="width: 15rem;"
-					class="" alt="...">
-				</div>
-				<div class="col-3">
-				 	<img src="..." th:src="@{'images/club.jpg'}" style="width: 15rem;"
-					class="" alt="...">
-				</div>
-				<div class="col-3">
-				 	<img src="..." th:src="@{'images/club.jpg'}" style="width: 15rem;"
-					class="" alt="...">
-				</div>
-				<div class="col-3">
-				 	<img src="..." th:src="@{'images/club.jpg'}" style="width: 15rem;"
-					class="" alt="...">
+	<section style="width: 99%; height: 100%;">
+		<div class="row">
+			<!-- card  -->
+
+			<div class="container" style="width: 350px; height: 500px; perspective: 800px;">
+				<div class="card mt-3"
+					style=" height: 100%; width: 100%; position: relative; transition: transform 1500ms; transform-style: preserve-3d;">
+
+					<div class="front" style="background-image: url(https://source.unsplash.com/random/350x500);"></div>
+
+					<div class="back" style="background-color: #3a3a3a; transform: rotateY(180deg) rotateZ(180deg); display: flex; flex-direction: column;
+       justify-content: center; align-items: center; gap: 5rem;">
+						<h1>Back of Card</h1>
+						<p>Additional info on the back of the card</p>
+					</div>
 				</div>
 			</div>
-			<div class="row mt-1">
-				<div class="col-3">
-				 	<img src="..." th:src="@{'images/club.jpg'}" style="width: 15rem;"
-					class="" alt="...">
-				</div>
-				<div class="col-3">
-				 	<img src="..." th:src="@{'images/club.jpg'}" style="width: 15rem;"
-					class="" alt="...">
-				</div>
-				<div class="col-3">
-				 	<img src="..." th:src="@{'images/club.jpg'}" style="width: 15rem;"
-					class="" alt="...">
-				</div>
-				<div class="col-3">
-				 	<img src="..." th:src="@{'images/club.jpg'}" style="width: 15rem;"
-					class="" alt="...">
+
+
+			<div class="container" style="width: 350px; height: 500px; perspective: 800px;">
+				<div class="card mt-3"
+					style=" height: 100%; width: 100%; position: relative; transition: transform 1500ms; transform-style: preserve-3d;">
+
+					<div class="front" style="background-image: url(https://source.unsplash.com/random/350x500);"></div>
+
+					<div class="back" style="background-color: #3a3a3a; transform: rotateY(180deg) rotateZ(180deg); display: flex; flex-direction: column;
+       justify-content: center; align-items: center; gap: 5rem;">
+						<h1>Back of Card</h1>
+						<p>Additional info on the back of the card</p>
+					</div>
 				</div>
 			</div>
-			<div class="row mt-1">
-				<div class="col-3">
-				 	<img src="..." th:src="@{'images/club.jpg'}" style="width: 15rem;"
-					class="" alt="...">
-				</div>
-				<div class="col-3">
-				 	<img src="..." th:src="@{'images/club.jpg'}" style="width: 15rem;"
-					class="" alt="...">
-				</div>
-				<div class="col-3">
-				 	<img src="..." th:src="@{'images/club.jpg'}" style="width: 15rem;"
-					class="" alt="...">
-				</div>
-				<div class="col-3">
-				 	<img src="..." th:src="@{'images/club.jpg'}" style="width: 15rem;"
-					class="" alt="...">
+
+			<div class="container" style="width: 350px; height: 500px; perspective: 800px;">
+				<div class="card mt-3"
+					style=" height: 100%; width: 100%; position: relative; transition: transform 1500ms; transform-style: preserve-3d;">
+
+					<div class="front" style="background-image: url(https://source.unsplash.com/random/350x500);"></div>
+
+					<div class="back" style="background-color: #3a3a3a; transform: rotateY(180deg) rotateZ(180deg); display: flex; flex-direction: column;
+       justify-content: center; align-items: center; gap: 5rem;">
+						<h1>Back of Card</h1>
+						<p>Additional info on the back of the card</p>
+					</div>
 				</div>
 			</div>
-			<div class="row mt-1">
-				<div class="col-3">
-				 	<img src="..." th:src="@{'images/club.jpg'}" style="width: 15rem;"
-					class="" alt="...">
-				</div>
-				<div class="col-3">
-				 	<img src="..." th:src="@{'images/club.jpg'}" style="width: 15rem;"
-					class="" alt="...">
-				</div>
-				<div class="col-3">
-				 	<img src="..." th:src="@{'images/club.jpg'}" style="width: 15rem;"
-					class="" alt="...">
-				</div>
-				<div class="col-3">
-				 	<img src="..." th:src="@{'images/club.jpg'}" style="width: 15rem;"
-					class="" alt="...">
+
+
+			<div class="container" style="width: 350px; height: 500px; perspective: 800px;">
+				<div class="card mt-3"
+					style=" height: 100%; width: 100%; position: relative; transition: transform 1500ms; transform-style: preserve-3d;">
+
+					<div class="front" style="background-image: url(https://source.unsplash.com/random/350x500);"></div>
+
+					<div class="back" style="background-color: #3a3a3a; transform: rotateY(180deg) rotateZ(180deg); display: flex; flex-direction: column;
+       justify-content: center; align-items: center; gap: 5rem;">
+						<h1>Back of Card</h1>
+						<p>Additional info on the back of the card</p>
+					</div>
 				</div>
 			</div>
+
+
+		</div>
+
+
+
+		<div class="row mt-5 mb-4">
+			<!-- card  -->
+
+			<div class="container" style="width: 350px; height: 500px; perspective: 800px;">
+				<div class="card"
+					style=" height: 100%; width: 100%; position: relative; transition: transform 1500ms; transform-style: preserve-3d;">
+
+					<div class="front" style="background-image: url(https://source.unsplash.com/random/350x500);"></div>
+
+					<div class="back" style="background-color: #3a3a3a; transform: rotateY(180deg) rotateZ(180deg); display: flex; flex-direction: column;
+       justify-content: center; align-items: center; gap: 5rem;">
+						<h1>Back of Card</h1>
+						<p>Additional info on the back of the card</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="container" style="width: 350px; height: 500px; perspective: 800px;">
+				<div class="card"
+					style=" height: 100%; width: 100%; position: relative; transition: transform 1500ms; transform-style: preserve-3d;">
+
+					<div class="front" style="background-image: url(https://source.unsplash.com/random/350x500);"></div>
+
+					<div class="back" style="background-color: #3a3a3a; transform: rotateY(180deg) rotateZ(180deg); display: flex; flex-direction: column;
+       justify-content: center; align-items: center; gap: 5rem;">
+						<h1>Back of Card</h1>
+						<p>Additional info on the back of the card</p>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="container" style="width: 350px; height: 500px; perspective: 800px;">
+				<div class="card"
+					style=" height: 100%; width: 100%; position: relative; transition: transform 1500ms; transform-style: preserve-3d;">
+
+					<div class="front" style="background-image: url(https://source.unsplash.com/random/350x500);"></div>
+
+					<div class="back" style="background-color: #3a3a3a; transform: rotateY(180deg) rotateZ(180deg); display: flex; flex-direction: column;
+       justify-content: center; align-items: center; gap: 5rem;">
+						<h1>Back of Card</h1>
+						<p>Additional info on the back of the card</p>
+					</div>
+				</div>
+			</div>
+
+
+
+			<div class="container" style="width: 350px; height: 500px; perspective: 800px;">
+				<div class="card"
+					style=" height: 100%; width: 100%; position: relative; transition: transform 1500ms; transform-style: preserve-3d;">
+
+					<div class="front" style="background-image: url(https://source.unsplash.com/random/350x500);"></div>
+
+					<div class="back" style="background-color: #3a3a3a; transform: rotateY(180deg) rotateZ(180deg); display: flex; flex-direction: column;
+       justify-content: center; align-items: center; gap: 5rem;">
+						<h1>Back of Card</h1>
+						<p>Additional info on the back of the card</p>
+					</div>
+				</div>
+			</div>
+
+
 		</div>
 	</section>
 </body>
+
 </html>

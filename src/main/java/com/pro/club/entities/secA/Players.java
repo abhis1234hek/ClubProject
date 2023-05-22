@@ -2,34 +2,48 @@ package com.pro.club.entities.secA;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
 
 @Entity
 public class Players 
 {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column (name="Player Id")
 	private int CPid;
+	@Column (name="Player Name")
 	private String CPName;
+	@Column (name="Player Age")
 	private int CPAge;
+	@Column (name="Contact")
 	private String CPContact;
+	@Column (name="Email")
 	private String CPEmail;
+	@Column (name="Player Image")
 	private String CPImage;
+	@Column (name="Player Domain")
 	private String CPDomain;
+	@Column (name="Player Address")
 	private String CPAddress;
+	@Column (name="Gender")
+	private String CPGender;
 	
 	@JsonBackReference
 	@ManyToOne
 	private User user;
+
+	public String getCPGender() {
+		return CPGender;
+	}
+
+	public void setCPGender(String cPGender) {
+		CPGender = cPGender;
+	}
 
 	public int getCPid() {
 		return CPid;
@@ -107,11 +121,11 @@ public class Players
 	public String toString() {
 		return "Players [CPid=" + CPid + ", CPName=" + CPName + ", CPAge=" + CPAge + ", CPContact=" + CPContact
 				+ ", CPEmail=" + CPEmail + ", CPImage=" + CPImage + ", CPDomain=" + CPDomain + ", CPAddress="
-				+ CPAddress  + "]";
+				+ CPAddress + ", CPGender=" + CPGender + ", user=" + user + "]";
 	}
 
 	public Players(int cPid, String cPName, int cPAge, String cPContact, String cPEmail, String cPImage,
-			String cPDomain, String cPAddress, User user) {
+			String cPDomain, String cPAddress, User user, String cPGender) {
 		super();
 		CPid = cPid;
 		CPName = cPName;
@@ -121,6 +135,7 @@ public class Players
 		CPImage = cPImage;
 		CPDomain = cPDomain;
 		CPAddress = cPAddress;
+		CPGender = cPGender;
 		this.user = user;
 	}
 

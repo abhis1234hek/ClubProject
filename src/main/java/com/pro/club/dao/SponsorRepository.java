@@ -7,7 +7,6 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import com.pro.club.entities.secB.Sponsor;
-import com.pro.club.entities.secB.Tmatch;
 
 public interface SponsorRepository extends JpaRepository<Sponsor, Integer> 
 {

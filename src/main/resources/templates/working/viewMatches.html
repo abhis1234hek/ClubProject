@@ -1,22 +1,20 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"
-	th:replace="base::layout(~{::section})">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+
 <head>
-<meta charset="UTF-8" />
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-	crossorigin="anonymous">
-<title>show Matches</title>
+	<meta charset="UTF-8" />
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<title>show Matches</title>
 </head>
+
 <body>
 	<section style="width: 100%; height: 80vh;">
 
-        <!-- Add matches -->
+		<!-- Add matches -->
 		<h1>Below are the matches under the tournament</h1>
-		<button data-bs-toggle="modal" data-bs-target="#staticBackdropTour"
-			type="button" class="btn btn-danger btn-sm">Add Match</button>
+		<button data-bs-toggle="modal" data-bs-target="#staticBackdropTour" type="button"
+			class="btn btn-danger btn-sm">Add Match</button>
 
 		<!-- Showing matches -->
 		<div class="row col-10 mx-auto mt-5">
@@ -37,62 +35,62 @@
 						<td th:text="${m.Mmdate}"></td>
 						<td th:text="${m.Mmplace}"></td>
 						<td>
-						
-						<!-- Updates and Delete Matches -->
-							<a th:href="@{'/user/showupdatematch/'+${m.Mid}}"><button type="button"  class="btn btn-primary btn-sm">Update</button></a>
-							<a th:href="@{'/user/deleteMatch/'+${m.Mid}}"><button type="button" class="btn btn-danger btn-sm">Delete</button></a>
-							
-						<!-- View Player and Add Player -->
-							<a th:href="@{'/user/viewTPlayers/' + ${m.Mid}}"><button class="btn-sm btn-outline-dark" type="button">View Players</button></a>
-							<button type="button" data-bs-toggle="modal"
-								data-bs-target="#staticBackdropPlayer"
+
+							<!-- Updates and Delete Matches -->
+							<a th:href="@{'/user/showupdatematch/'+${m.Mid}}"><button type="button"
+									class="btn btn-primary btn-sm">Update</button></a>
+							<a th:href="@{'/user/deleteMatch/'+${m.Mid}}"><button type="button"
+									class="btn btn-danger btn-sm">Delete</button></a>
+
+							<!-- View Player and Add Player -->
+							<a th:href="@{'/user/viewTPlayers/' + ${m.Mid}}"><button class="btn-sm btn-outline-dark"
+									type="button">View Players</button></a>
+							<button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdropPlayer"
 								class="btn btn-primary btn-sm">Add Player</button>
-						
-						
-						<!-- Add players modal -->
-						<div class="modal fade" id="staticBackdropPlayer"
-							data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-							aria-labelledby="staticBackdropLabel" aria-hidden="true">
-							<div class="modal-dialog">
-								<div class="modal-content">
-									<div class="modal-header">
-										<h5 class="modal-title" id="staticBackdropLabel">Add
-											Player</h5>
-										<button type="button" class="btn-close"
-											data-bs-dismiss="modal" aria-label="Close"></button>
-									</div>
-									<div class="modal-body">
-										<form th:action="@{'/user/addPlayer/'+${m.Mid}}" method="POST">
 
-											<!-- Player Name -->
-											<div class="mb-1">
-												<label for="exampleInputEmail1" class="form-label">Name</label>
-												<input required type="text" class="form-control"
-													name="Mpname" id="exampleInputEmail1"
-													aria-describedby="emailHelp">
-											</div>
 
-											<!--Player Team -->
-											<div class="mb-1">
-												<label for="exampleInputEmail1" class="form-label">Team</label>
-												<input required type="text" class="form-control"
-													name="Mpteam" id="exampleInputEmail1"
-													aria-describedby="emailHelp">
-											</div>
+							<!-- Add players modal -->
+							<div class="modal fade" id="staticBackdropPlayer" data-bs-backdrop="static"
+								data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+								aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="staticBackdropLabel">Add
+												Player</h5>
+											<button type="button" class="btn-close" data-bs-dismiss="modal"
+												aria-label="Close"></button>
+										</div>
+										<div class="modal-body">
+											<form th:action="@{'/user/addPlayer/'+${m.Mid}}" method="POST">
 
-											<hr />
-											<!-- Back & Submit -->
-											<div class="modal-footer">
-											<button type="reset" class="btn btn-outline-info">Reset</button>
-												<button type="button" class="btn btn-secondary"
-													data-bs-dismiss="modal">Back</button>
-												<button type="submit" class="btn btn-primary">Submit</button>
-											</div>
-										</form>
+												<!-- Player Name -->
+												<div class="mb-1">
+													<label for="exampleInputName" class="form-label">Name</label>
+													<input required type="text" class="form-control" name="Mpname"
+														id="exampleInputName">
+												</div>
+
+												<!--Player Team -->
+												<div class="mb-1">
+													<label for="exampleInputTeam" class="form-label">Team</label>
+													<input required type="text" class="form-control" name="Mpteam"
+														id="exampleInputTeam">
+												</div>
+
+												<hr />
+												<!-- Back & Submit -->
+												<div class="modal-footer">
+													<button type="reset" class="btn btn-outline-info">Reset</button>
+													<button type="button" class="btn btn-secondary"
+														data-bs-dismiss="modal">Back</button>
+													<button type="submit" class="btn btn-primary">Submit</button>
+												</div>
+											</form>
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
 						</td>
 					</tr>
 				</tbody>
@@ -102,63 +100,55 @@
 
 
 		<!-- Add match modal -->
-		<div class="modal fade" id="staticBackdropTour"
-			data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+		<div class="modal fade" id="staticBackdropTour" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
 			aria-labelledby="staticBackdropLabel" aria-hidden="true">
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
 						<h5 class="modal-title" id="staticBackdropLabel">Add Match</h5>
-						<button type="button" class="btn-close" data-bs-dismiss="modal"
-							aria-label="Close"></button>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
 					<div class="modal-body">
 						<form th:action="@{/user/addMatch}" method="POST">
 
 							<!-- Tournament Id -->
 							<div class="mb-1">
-									<input required type="hidden" class="form-control"
-									name="Tourid" th:value="${tid}" id="exampleInputEmail1"
-									aria-describedby="emailHelp">
+								<input required type="hidden" class="form-control" name="Tourid" th:value="${tid}"
+									id="exampleInputId">
 							</div>
 
 							<!-- Name of Team A -->
 							<div class="mb-1">
-								<label for="exampleInputEmail1" class="form-label">Team
-									A</label> <input required type="text" class="form-control"
-									name="Mmteama" id="exampleInputEmail1"
-									aria-describedby="emailHelp">
+								<label for="exampleInputTeama" class="form-label">Team
+									A</label> <input required type="text" class="form-control" name="Mmteama"
+									id="exampleInputTeamb">
 							</div>
 
 							<!--Name of Team B -->
 							<div class="mb-1">
-								<label for="exampleInputEmail1" class="form-label">Team
-									B</label> <input required type="text" class="form-control"
-									name="Mmteamb" id="exampleInputEmail1"
-									aria-describedby="emailHelp">
+								<label for="exampleInputTeamb" class="form-label">Team
+									B</label> <input required type="text" class="form-control" name="Mmteamb"
+									id="exampleInputTeamb">
 							</div>
 
 							<!-- Match Date -->
 							<div class="mb-1">
-								<label for="exampleInputEmail1" class="form-label">Match
-									Date</label> <input required type="text" class="form-control"
-									name="Mmdate" id="exampleInputEmail1"
-									aria-describedby="emailHelp">
+								<label for="exampleInputDate" class="form-label">Match
+									Date</label> <input required type="text" class="form-control" name="Mmdate"
+									id="exampleInputDate">
 							</div>
 
 							<!-- Place -->
 							<div class="mb-1">
-								<label for="exampleInputEmail1" class="form-label">Place</label>
-								<input required type="text" class="form-control" name="Mmplace"
-									id="exampleInputEmail1" aria-describedby="emailHelp">
+								<label for="exampleInputPlace" class="form-label">Place</label>
+								<input required type="text" class="form-control" name="Mmplace" id="exampleInputPlace">
 							</div>
 
 							<hr />
 							<!-- Back & Submit -->
 							<div class="modal-footer">
-							<button type="reset" class="btn btn-outline-info">Reset</button>
-								<button type="button" class="btn btn-secondary"
-									data-bs-dismiss="modal">Back</button>
+								<button type="reset" class="btn btn-outline-info">Reset</button>
+								<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Back</button>
 								<button type="submit" class="btn btn-primary">Submit</button>
 							</div>
 						</form>
@@ -167,11 +157,12 @@
 			</div>
 		</div>
 
-											<!-- Back  -->
-											<div class="modal-footer">
-												<a th:href="@{/user/viewclubtour}"><button type="button" class="btn btn-secondary"
-													data-bs-dismiss="modal">Back</button></a>
-											</div>
+		<!-- Back  -->
+		<div class="modal-footer">
+			<a th:href="@{/user/viewclubtour}"><button type="button" class="btn btn-secondary"
+					data-bs-dismiss="modal">Back</button></a>
+		</div>
 	</section>
 </body>
+
 </html>

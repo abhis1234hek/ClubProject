@@ -1,7 +1,5 @@
 package com.pro.club.entities.secB;
 
-import java.util.List;
-
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import jakarta.persistence.Entity;
@@ -24,7 +22,7 @@ import lombok.ToString;
 public class Tplayers 
 {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int Mpid;
 	private String Mpname;
 	private String Mpteam;

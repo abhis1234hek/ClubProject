@@ -1,16 +1,17 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"
-	th:replace="~{base::layout(~{::section})}">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base::layout(~{::section})}">
+
 <head>
-<meta charset="UTF-8" />
-<title>Login</title>
+	<meta charset="UTF-8" />
+	<title>Success</title>
 </head>
+
 <body>
 	<section>
-	
-	<!-- Profile Information -->	
-	
-	   <div class="container mt-2">
+
+		<!-- Profile Information -->
+
+		<div class="container mt-2">
 			<div class="main-body mt-3">
 
 				<div class="row gutters-sm pt-3 bg-dark">
@@ -18,7 +19,7 @@
 						<div class="card bg-dark">
 							<div class="card-body">
 								<div class="d-flex flex-column align-items-center text-center">
-									<img th:src="@{'/images/users/'+${image}}" style="width:200px; height:200px;"
+									<img th:src="@{'/images/users/'+${image}}" style="width: 200px; height: 200px;"
 										alt="..." class="rounded-circle" width="150">
 									<div class="mt-3">
 										<h4 class="text-white fw-bolder font-monospace" th:text="${name}"></h4>
@@ -28,85 +29,81 @@
 								</div>
 							</div>
 						</div>
-						
+
 						<!-- Card Info -->
-							
-						<div class="card mt-5 ">
+
+						<div class="card">
 							<ul class="list-group list-group-flush">
-							
-							<!-- Add Player -->	
-							
-								<li
-									class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+
+								<!-- Add Player -->
+
+								<li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
 									<h6 class="mb-0">
-									<i class="fa-solid fa-user-plus fa-flip"></i>
-										
+										<i class="fa-solid fa-user-plus fa-flip"></i>
+
 									</h6> <span class="text-secondary"><button type="button"
 											class="btn btn-outline-primary" data-bs-toggle="modal"
 											data-bs-target="#staticBackdrop">Add Player</button></span>
 								</li>
-								
+
 								<!-- View Player -->
-									
-								<li
-									class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+
+								<li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
 									<h6 class="mb-0">
 										<i class="fa-regular fa-eye fa-beat-fade"></i>
-										
+
 									</h6> <a th:href="@{/user/viewPlayers}">
 										<button type="button" class="btn btn-outline-secondary">View
 											Players</button>
-								</a>
+									</a>
 								</li>
-								
-								<!-- Add Tournament -->	
-								
-								<li
-									class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+
+								<!-- Add Tournament -->
+
+								<li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
 									<h6 class="mb-0">
-										
+
 										<i class="fa-solid fa-user-plus fa-flip"></i>
 									</h6> <span class="text-secondary"><button type="button"
 											class="btn btn-outline-primary" data-bs-toggle="modal"
 											data-bs-target="#staticBackdropTour">Add Tournament</button></span>
 								</li>
-								
-								<!-- View Tournament -->	
-								
-								<li
-									class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+
+								<!-- View Tournament -->
+
+								<li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
 									<h6 class="mb-0">
-										
+
 										<i class="fa-regular fa-eye fa-beat-fade"></i>
-									</h6> <span class="text-secondary">
-									<a th:href="@{/user/viewclubtour}">
-									<button type="button" class="btn btn-outline-secondary" >View Tournaments</button></a></span>
+									</h6> <span class="text-secondary"> <a th:href="@{/user/viewclubtour}">
+											<button type="button" class="btn btn-outline-secondary">View
+												Tournaments</button>
+										</a></span>
 								</li>
-								
-								<!-- Logout -->	
-								
-								<li
-									class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+
+								<!-- Logout -->
+
+								<li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
 									<h6 class="mb-0">
-										
+
 										<i class="fa fa-sign-out" aria-hidden="true"></i>
-									</h6> <span class="text-secondary"><a th:href="@{/logout}"><button
-												type="button" class="btn btn-outline-danger" >Logout</button></a></span>
+									</h6> <span class="text-secondary"><a th:href="@{/logout}"><button type="button"
+												class="btn btn-outline-danger">Logout</button></a></span>
 								</li>
 							</ul>
 						</div>
 					</div>
-					
+
 					<!-- Club Information -->
-						
+
 					<div class="col-md-8">
 						<div class="card mb-3">
 							<div class="card-body">
-							
-							<!-- FULL NAME -->
-							
+
+								<!-- FULL NAME -->
+
 								<div class="row">
-								<div class="col-sm-3">
+									<div class="col-sm-3">
 										<h6 class="mb-0">Full Name</h6>
 									</div>
 									<div class="col-sm-9 text-secondary">
@@ -114,9 +111,9 @@
 									</div>
 								</div>
 								<hr>
-								
+
 								<!-- Email -->
-								
+
 								<div class="row">
 									<div class="col-sm-3">
 										<h6 class="mb-0">Email</h6>
@@ -126,9 +123,9 @@
 									</div>
 								</div>
 								<hr>
-								
+
 								<!-- Phone -->
-								
+
 								<div class="row">
 									<div class="col-sm-3">
 										<h6 class="mb-0">Phone</h6>
@@ -138,9 +135,9 @@
 									</div>
 								</div>
 								<hr>
-								
+
 								<!-- Mobile -->
-								
+
 								<div class="row">
 									<div class="col-sm-3">
 										<h6 class="mb-0">Mobile</h6>
@@ -159,20 +156,11 @@
 									</div>
 								</div>
 								<hr>
-								
-								<!-- Edit -->
-								
-								<div class="row">
-									<div class="col-sm-12">
-										<a class="btn btn-info " target="__blank"
-											href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">Edit</a>
-									</div>
-								</div>
 							</div>
 						</div>
-						
-                        <!-- Outdoor Games -->
-                        
+
+						<!-- Outdoor Games -->
+
 						<div class="row gutters-sm">
 							<div class="col-sm-6 mb-3">
 								<div class="card h-100">
@@ -181,28 +169,28 @@
 											<i class="text-info mr-2 me-2">Outdoor</i>Games
 										</h6>
 										<ul>
-										<li class="mt-3 mb-3 fw-bold">
-								         Cricket <i class="fa fa-bat" style="margin-left:275px;"></i>
-										</li>
-										<li class="mt-3 mb-3 fw-bold">
-											Football <i class="fas fa-futbol" style="margin-left:265px;"></i>
-										</li>
-										<li class="mt-3 mb-3 fw-bold">
-											Basketball <i class="fas fa-basketball" style="margin-left:250px;"></i>
-										</li>
-										<li class="mt-3 mb-3 fw-bold">
-											Hockey  <i class="fa fa-hockey-stick-puck" style="margin-left:270px;"></i>
-										</li>
-										<li class="mt-3 mb-3 fw-bold">
-											Volleyball <i class="fas fa-volleyball-ball" style="margin-left:253px;"></i>
-										</li>
+											<li class="mt-3 mb-3 fw-bold">Cricket <span
+													style="margin-left: 270px;">&#127951</span>
+											</li>
+											<li class="mt-3 mb-3 fw-bold">Football <span
+													style="margin-left: 260px;">&#9917</span>
+											</li>
+											<li class="mt-3 mb-3 fw-bold">Basketball <span
+													style="margin-left: 245px;">&#127936</span>
+											</li>
+											<li class="mt-3 mb-3 fw-bold">Hockey <span
+													style="margin-left: 265px;">&#127953</span>
+											</li>
+											<li class="mt-3 mb-3 fw-bold">Volleyball <span
+													style="margin-left: 248px;">&#127952</span>
+											</li>
 										</ul>
 									</div>
 								</div>
 							</div>
-							
+
 							<!-- Indoor Games -->
-							
+
 							<div class="col-sm-6 mb-3">
 								<div class="card h-100">
 									<div class="card-body">
@@ -210,119 +198,123 @@
 											<i class=" text-info mr-2 me-2">Indoor</i>Games
 										</h6>
 										<ul>
-										<li class="mt-3  mb-3 fw-bold">
-											Carrom        <i class="fas fa-hockey-puck" style="margin-left:273px;"></i>
-										</li>
-										<li class="mt-3 mb-3 fw-bold">
-											Badminton   <i class="" style="margin-left:245px;"></i>
-										</li>
-										<li class="mt-3 mb-3 fw-bold">
-											Chess <i class="fa fa-chess" style="margin-left:287px;"></i>
-										</li>
-										<li class="mt-3 mb-3 fw-bold">
-											Table Tennis	<i class="fas fa-table-tennis" style="margin-left:237px;"></i>
-										</li>
-										<li class="mt-3 mb-3 fw-bold">
-											Archery       <i class="fa fa-bullseye" style="margin-left:270px;"></i>
-										</li>
+											<li class="mt-3  mb-3 fw-bold">Carrom <i class="fas fa-hockey-puck"
+													style="margin-left: 273px;"></i>
+											</li>
+											<li class="mt-3 mb-3 fw-bold">Badminton <span
+													style="margin-left: 240px;">&#127992</span>
+											</li>
+											<li class="mt-3 mb-3 fw-bold">Chess <span
+													style="margin-left: 280px;">&#9823</span>
+											</li>
+											<li class="mt-3 mb-3 fw-bold">Table Tennis <span
+													style="margin-left: 230px;">&#127955</span>
+											</li>
+											<li class="mt-3 mb-3 fw-bold">Archery <span
+													style="margin-left: 260px;">&#127993</span>
+											</li>
 										</ul>
 									</div>
 								</div>
 							</div>
 						</div>
-                    </div>
+					</div>
 				</div>
 			</div>
 		</div>
 
 
 		<!-- Add Player modal -->
-		<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static"
-			data-bs-keyboard="false" tabindex="-1"
+		<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
 			aria-labelledby="staticBackdropLabel" aria-hidden="true">
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
 						<h5 class="modal-title" id="staticBackdropLabel">Add Player</h5>
-						<button type="button" class="btn-close" data-bs-dismiss="modal"
-							aria-label="Close"></button>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
 					<div class="modal-body">
 						<form th:action="@{/user/savePlayer}" method="POST" enctype="multipart/form-data">
 
 							<!-- Image -->
-							
+
 							<div class="mb-1">
-								<label for="exampleInputEmail1" class="form-label">Add players photo here</label>
-								<input required type="file" class="form-control" name="pimage"
-									id="exampleInputEmail1" aria-describedby="emailHelp">
+								<label for="exampleInputPhoto" class="form-label">Add
+									players photo here</label> <input required type="file" class="form-control"
+									name="pimage" id="exampleInputPhoto">
 							</div>
-							
+
 							<!-- First & Last name -->
-							
+
 							<div class="mb-1 row">
 
 								<!-- Player name -->
-								
+
 								<div class="col-6">
-									<label for="exampleInputEmail1" class="form-label">Player
-										Name</label> <input required type="text" class="form-control"
-										name="CPName" id="exampleInputEmail1"
-										aria-describedby="emailHelp">
+									<label for="exampleInputName" class="form-label">Player
+										Name</label> <input required type="text" class="form-control" name="CPName"
+										id="exampleInputName">
 								</div>
 
 
-							<!-- Age -->
-							
-							<div class="mb-1 col-6">
-								<label for="exampleInputEmail1" class="form-label">Age </label>
-								<input required type="text" class="form-control" name="CPAge"
-									id="exampleInputEmail1" aria-describedby="emailHelp">
-							</div>
-							
-							</div>
+								<!-- Age -->
 
+								<div class="mb-1 col-6">
+									<label for="exampleInputAge" class="form-label">Age
+									</label> <input required type="text" class="form-control" name="CPAge"
+										id="exampleInputAge">
+								</div>
 
-							<!-- Contact -->
-							
-							<div class="mb-1">
-								<label for="exampleInputEmail1" class="form-label">Contact
-									no.</label> <input required type="text" class="form-control"
-									name="CPContact" id="exampleInputEmail1"
-									aria-describedby="emailHelp">
 							</div>
 
+							<div class="mb-1 row">
+
+								<!-- Age -->
+
+								<div class="mb-1 col-6">
+									<label for="inputGender" class="form-label">Gender </label> <input required
+										type="text" class="form-control" name="CPGender" id="inputGender">
+
+								</div>
+
+
+
+								<!-- Contact -->
+
+								<div class="mb-1 col-6">
+									<label for="exampleInputContact" class="form-label">Contact
+										no.</label> <input required type="text" class="form-control" name="CPContact"
+										id="exampleInputContact">
+								</div>
+							</div>
 							<!-- Email -->
 							<div class="mb-1">
 								<label for="exampleInputEmail1" class="form-label">Email
-									Address</label> <input required type="email" class="form-control"
-									name="CPEmail" id="exampleInputEmail1"
-									aria-describedby="emailHelp">
+									Address</label> <input required type="email" class="form-control" name="CPEmail"
+									id="exampleInputEmail1">
 							</div>
 
 
 							<!-- Domain -->
-							
+
 							<div class="mb-1">
-								<label for="exampleInputEmail1" class="form-label">Domain</label>
+								<label for="exampleInputDomain" class="form-label">Domain</label>
 								<input required type="text" class="form-control" name="CPDomain"
-									id="exampleInputEmail1" aria-describedby="emailHelp">
+									id="exampleInputDomain">
 							</div>
 
 							<!-- Address -->
-							
+
 							<div class="mb-1">
-								<label for="exampleInputEmail1" class="form-label">Address</label>
-								<input required type="text" class="form-control"
-									name="CPAddress" id="exampleInputEmail1"
-									aria-describedby="emailHelp">
+								<label for="exampleInputAddress" class="form-label">Address</label>
+								<input required type="text" class="form-control" name="CPAddress"
+									id="exampleInputAddress">
 							</div>
-							<!-- Back & Submit -->	
-							
+							<!-- Back & Submit -->
+
 							<div class="modal-footer">
-							<button type="reset" class="btn btn-outline-info">Reset</button>
-								<button type="button" class="btn btn-secondary"
-									data-bs-dismiss="modal">Back</button>
+								<button type="reset" class="btn btn-outline-info">Reset</button>
+								<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Back</button>
 								<button type="submit" class="btn btn-primary">Submit</button>
 							</div>
 						</form>
@@ -333,64 +325,57 @@
 
 
 		<!-- Add tournament modal -->
-		<div class="modal fade" id="staticBackdropTour" data-bs-backdrop="static"
-			data-bs-keyboard="false" tabindex="-1"
+		<div class="modal fade" id="staticBackdropTour" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
 			aria-labelledby="staticBackdropLabel" aria-hidden="true">
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="staticBackdropLabel">Add Tournament</h5>
-						<button type="button" class="btn-close" data-bs-dismiss="modal"
-							aria-label="Close"></button>
+						<h5 class="modal-title" id="staticBackdropLabel">Add
+							Tournament</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
 					<div class="modal-body">
 						<form th:action="@{/user/saveTour}" method="POST">
 
-                            <!--Tournament name -->
+							<!--Tournament name -->
 							<div class="mb-1">
-								<label for="exampleInputEmail1" class="form-label">Tournament Name</label> 
-								<input required type="text" class="form-control"
-									name="TName" id="exampleInputEmail1"
-									aria-describedby="emailHelp">
+								<label for="exampleInputName" class="form-label">Tournament
+									Name</label> <input required type="text" class="form-control" name="TName"
+									id="exampleInputName">
 							</div>
-							
+
 							<!--Tournament Domain -->
 							<div class="mb-1">
-								<label for="exampleInputEmail1" class="form-label">Tournament Domain</label> 
-								<input required type="text" class="form-control"
-									name="TDomain" id="exampleInputEmail1"
-									aria-describedby="emailHelp">
+								<label for="exampleInputDomain" class="form-label">Tournament
+									Domain</label> <input required type="text" class="form-control" name="TDomain"
+									id="exampleInputDomain">
 							</div>
 
 							<!-- Start Date -->
 							<div class="mb-1">
-								<label for="exampleInputEmail1" class="form-label">Start Date</label> 
-								<input required type="date" class="form-control"
-									name="TSDate" id="exampleInputEmail1"
-									aria-describedby="emailHelp">
+								<label for="exampleInputDate" class="form-label">Start
+									Date</label> <input required type="date" class="form-control" name="TSDate"
+									id="exampleInputDate">
 							</div>
-							
+
 							<!-- End Date -->
 							<div class="mb-1">
-								<label for="exampleInputEmail1" class="form-label">End Date</label> 
-								<input required type="date" class="form-control"
-									name="TEDate" id="exampleInputEmail1"
-									aria-describedby="emailHelp">
+								<label for="exampleInputDate" class="form-label">End
+									Date</label> <input required type="date" class="form-control" name="TEDate"
+									id="exampleInputDate">
 							</div>
 
 							<!-- Place -->
 							<div class="mb-1">
-								<label for="exampleInputEmail1" class="form-label">Country</label>
-								<input required type="text" class="form-control" name="TPlace"
-									id="exampleInputEmail1" aria-describedby="emailHelp">
+								<label for="exampleInputCountry" class="form-label">Country</label>
+								<input required type="text" class="form-control" name="TPlace" id="exampleInputCountry">
 							</div>
 
-							<hr/>
-							<!-- Back & Submit -->	
+							<hr />
+							<!-- Back & Submit -->
 							<div class="modal-footer">
-							<button type="reset" class="btn btn-outline-info">Reset</button>
-								<button type="button" class="btn btn-secondary"
-									data-bs-dismiss="modal">Back</button>
+								<button type="reset" class="btn btn-outline-info">Reset</button>
+								<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Back</button>
 								<button type="submit" class="btn btn-primary">Submit</button>
 							</div>
 						</form>
@@ -399,6 +384,7 @@
 			</div>
 		</div>
 
-</section>
+	</section>
 </body>
+
 </html>

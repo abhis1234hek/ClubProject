@@ -16,7 +16,7 @@ import org.springframework.security.web.SecurityFilterChain;
 public class MyConfig 
 {
 	@Bean
-	UserDetailsService geUserDetailsService()
+	UserDetailsService UserDetailsService()
 	{
 		return new UserDetailsServiceImpl();
 	}
@@ -31,7 +31,7 @@ public class MyConfig
 	DaoAuthenticationProvider authenticationProvider()
 	{
 		DaoAuthenticationProvider daoAuthenticationProvider = new DaoAuthenticationProvider();
-		daoAuthenticationProvider.setUserDetailsService(this.geUserDetailsService());
+		daoAuthenticationProvider.setUserDetailsService(this.UserDetailsService());
 		daoAuthenticationProvider.setPasswordEncoder(passwordEncoder());
 		return daoAuthenticationProvider;
 	}

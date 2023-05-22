@@ -1,63 +1,126 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" 
-				th:replace="base::layout(~{::section})">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+
 <head>
-<meta charset="UTF-8" />
-<title>Payment page</title>
+	<meta charset="UTF-8" />
+	<title>Payment page</title>
 </head>
+
 <body>
 	<section class="mb-5 ps-1 pe-1" style="width: 99%; height: 80vh;">
-	<form method="post" action="/pgredirect">
-    <div class="container" 
-    style=" background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+		<form th:action="@{/payment}" method="POST">
+			<div class="container" style=" background: -webkit-linear-gradient(left, #3931af, #00c6ff);
     margin-top: 3%;
     padding: 3%;">
-        <div class="row">
-            <div class="col-md-3" 
-            style=" text-align: center; color: #fff; margin-top: 4%; border: none; border-radius: 1.5rem; padding: 2%; background: #f8f9fa; font-weight: bold; color: #383d41; margin-bottom: 3%;">
-                <img src="(../images/about.jpg)" alt=""
-                style=" margin-top: 15%; margin-bottom: 5%; width: 25%; -webkit-animation: mover 2s infinite  alternate; animation: mover 1s infinite  alternate;"/>
-                <h3>Welcome</h3>
-                <p style=" font-weight: lighter; padding: 12%; margin-top: -9%;">You are 30 seconds away from earning your own money!</p>
-            </div>
-            <div class="col-md-9"
-            style="background: #f8f9fa; border-top-left-radius: 10% 50%; border-bottom-left-radius: 10% 50%;">
-                <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                        <h3 style=" text-align: center; margin-top: 2%; color: #495057; padding-left: 75px;">Welcome to Paytm Payment</h3>
-                        <div class="row">
-                            <div class="col-md-10">
-                                <div class="form-group">
-                                    <input id="ORDER_ID" tabindex="1" maxlength="20" size="20"
-                                           name="ORDER_ID" autocomplete="off" class="form-control ms-5" >
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control ms-5" placeholder="Customer ID" value=""
-                                           name="CUST_ID"/>
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control ms-5" placeholder="INDUSTRY_TYPE_ID" value=""
-                                           name="INDUSTRY_TYPE_ID"/>
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control ms-5" placeholder="Channel" value=""
-                                           name="CHANNEL_ID"/>
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control ms-5" placeholder="Amount" value=""
-                                           name="TXN_AMOUNT"/>
-                                </div>
-                                <!--  <input type="submit" class="btnRegister"  value="Pay with Paytm"/>   -->
-                                <button type="submit" style="text-align:center; border: none; border-radius: 1.5rem; background: #0062cc; color: #fff; font-weight: 600; width: 55%; cursor: pointer; padding: 1%; font-size: xx-large; margin-top: 3px; margin:auto; display:block;">Pay with Paytm</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+				<div class="row">
+					<div class="col-md-3"
+						style=" text-align: center; color: #fff; margin-top: 4%; border: none; border-radius: 1.5rem; padding: 2%; background: #f8f9fa; font-weight: bold; color: #383d41; margin-bottom: 3%;">
+						<img src="(../images/about.jpg)" alt=""
+							style=" margin-top: 15%; margin-bottom: 5%; width: 25%; -webkit-animation: mover 2s infinite  alternate; animation: mover 1s infinite  alternate;" />
+						<h3>Welcome</h3>
+						<p style=" font-weight: lighter; padding: 12%; margin-top: -9%;">You are 30 seconds away from
+							earning your own money!</p>
+					</div>
+					<div class="col-md-9"
+						style="background: #f8f9fa; border-top-left-radius: 10% 50%; border-bottom-left-radius: 10% 50%;">
+						<div class="tab-content" id="myTabContent">
+							<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+								<h3 style=" text-align: center; margin-top: 2%; color: #495057; padding-left: 75px;">
+									Welcome to Payment Mode</h3>
 
-            </div>
-        </div>
-    </div>
-</form>
+
+								<div class="row">
+
+
+									<div class="col-md-11">
+										<div class="row">
+											<div class="form-group col-6">
+												<input id="ORDER_ID" tabindex="1" maxlength="20" size="20"
+													placeholder="First Name" name="GPname" autocomplete="off"
+													class="form-control ms-5" required>
+											</div>
+											<div class="form-group col-6">
+												<input id="ORDER_ID" tabindex="1" maxlength="20" size="20"
+													placeholder="Last Name" name="GPname" autocomplete="off"
+													class="form-control ms-5" required>
+											</div>
+										</div>
+										<div class="row">
+											<div class="form-group col-6">
+												<input type="text" class="form-control ms-5" placeholder="Email"
+													value="" name="GPemail" required>
+											</div>
+											<div class="form-group col-6">
+												<input type="text" class="form-control ms-5" placeholder="Contact"
+													value="" name="GPcontact" required>
+											</div>
+										</div>
+										<div class="row">
+											<div class="form-group col-6">
+												<input type="text" class="form-control ms-5" id="current-date"
+													name="GPDate">
+											</div>
+											<div class="form-group col-6">
+												<select id="inputpayment" class="form-select ms-5" name="GPMethod">
+													<option selected>Payment Mode...</option>
+													<option>Online</option>
+
+												</select>
+											</div>
+										</div>
+										<div class="row">
+											<div class="form-group col-6">
+												<select id="inputpayment" class="form-select ms-5" name="GPmode">
+													<option selected>Game Mode...</option>
+													<option>Indoor Game</option>
+													<option>Outdoor Game</option>
+												</select>
+											</div>
+											<div class="form-group col-6">
+												<select id="inputpayment" class="form-select ms-5" name="GPkit">
+													<option selected>Kit Name...</option>
+
+													<optgroup label="Indoor Games">
+														<option>Cricket</option>
+														<option>Football</option>
+														<option>Hockey</option>
+														<option>Basketball</option>
+														<option>Volleyball</option>
+													</optgroup>
+													<optgroup label="Outdoor Games">
+														<option>Carrom</option>
+														<option>Badminton</option>
+														<option>Chess</option>
+														<option>Table Tennis</option>
+														<option>Archery</option>
+													</optgroup>
+												</select>
+											</div>
+										</div>
+										<div class="form-group">
+											<input type="text" class="form-control ms-5" placeholder="Amount" value=""
+												name="GPAmount" required>
+										</div>
+										<!--   submit   -->
+										<a> <button type="submit"
+												style="text-align:center; border: none; border-radius: 1.5rem; background: #0062cc; color: #fff; font-weight: 600; width: 55%; cursor: pointer; padding: 1%; font-size: xx-large; margin-top: 3px; margin:auto; display:block;"
+												class="mt-4">Pay Now</button>
+										</a>
+									</div>
+
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<script>
+				document.getElementById("current-date").value = new Date().toLocaleDateString(); 
+			</script>
+		</form>
+
 	</section>
 </body>
+
 </html>

@@ -22,6 +22,7 @@ import com.pro.club.dao.AddressRepository;
 import com.pro.club.dao.UserRepository;
 import com.pro.club.entities.secA.Address;
 import com.pro.club.entities.secA.User;
+import com.pro.club.service.UserService;
 
 
 @Controller
@@ -37,8 +38,19 @@ public class HomeController
 	@Autowired
 	private AddressRepository addressRepository;
 	
-	// -----------------| Show Home page handler |-----------------
+	@Autowired
+	private UserService userService;
+	
+	
+	// -----------------| Show welcome page handler |-----------------
 	@RequestMapping("/")
+	public String welcome()
+	{
+		return "welcome";
+	}
+	
+	// -----------------| Show Home page handler |-----------------
+	@RequestMapping("/home")
 	public String home()
 	{
 		return "home";
@@ -73,12 +85,6 @@ public class HomeController
 		return "gallery";
 	}
 	
-	// -----------------| Show News page handler |-----------------
-       @RequestMapping("/news")
-		public String news()
-		{
-			return "news";
-		}
 		
 	// -----------------| Show login page |-----------------
 	@GetMapping("/signin")
@@ -108,7 +114,8 @@ public class HomeController
 		user.setRole("ROLE_USER");
 		user.setAddress(address);
 		user.setPassword(passwordEncoder.encode(user.getPassword()));
-		this.userRepository.save(user);
-		return "redirect:/";
+		this.userService.addUser(user);
+//		this.userRepository.save(user);
+		return "redirect:/home";
 	}
 }

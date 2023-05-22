@@ -1,53 +1,51 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"
-	th:replace="~{base::layout(~{::section})}">
-<head>
-<meta charset="UTF-8" />
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base::layout(~{::section})}">
 
-<title>update sponsor page</title>
+<head>
+	<meta charset="UTF-8" />
+
+	<title>update sponsor page</title>
 </head>
+
 <body>
 	<section>
-			<h1>Update Sponsor</h1>
-			<div class="p-5">
+		<h1>Update Sponsor</h1>
+		<div class="p-5">
 			<form th:action="@{'/user/updateSponsor/'+${s.SPid}}" method="POST">
 
-											<!--Sponsor name -->
-											<div class="mb-1">
-												<label for="exampleInputEmail1" class="form-label">Sponsor Name</label>
-												<input required type="text" class="form-control"
-													name="SPName" th:value="${s.SPName}" id="exampleInputEmail1"
-													aria-describedby="emailHelp">
-											</div>
-											
-											<!--Sponsor Location -->
-											<div class="mb-1">
-												<label for="exampleInputEmail1" class="form-label">Sponsor Location</label>
-												<input required type="text" class="form-control"
-													name="SPLocation" th:value="${s.SPLocation}" id="exampleInputEmail1"
-													aria-describedby="emailHelp">
-											</div>
-											
-											<!--Sponsor Amount -->
-											<div class="mb-1">
-												<label for="exampleInputEmail1" class="form-label">Sponsor Amount</label>
-												<input required type="text" class="form-control"
-													name="SPAmount" th:value="${s.SPAmount}" id="exampleInputEmail1"
-													aria-describedby="emailHelp">
-											</div>
+				<!--Sponsor name -->
+				<div class="mb-1">
+					<label for="exampleInputName" class="form-label">Sponsor Name</label>
+					<input required type="text" class="form-control" name="SPName" th:value="${s.SPName}"
+						id="exampleInputName">
+				</div>
 
-											<hr />
-											<!-- Back & Submit -->
-											<div class="modal-footer">
-											<a th:href="@{'/user/viewTourSponsor/'+${Mid}}">
-												<button type="button" class="btn btn-secondary"
-													data-bs-dismiss="modal">Back</button>
-											</a>
-												<button type="submit" class="btn btn-primary">Update</button>
-											</div>
-										</form>
-										</div>
-										
+				<!--Sponsor Location -->
+				<div class="mb-1">
+					<label for="exampleInputLocation" class="form-label">Sponsor Location</label>
+					<input required type="text" class="form-control" name="SPLocation" th:value="${s.SPLocation}"
+						id="exampleInputLocation">
+				</div>
+
+				<!--Sponsor Amount -->
+				<div class="mb-1">
+					<label for="exampleInputAmount" class="form-label">Sponsor Amount</label>
+					<input required type="text" class="form-control" name="SPAmount" th:value="${s.SPAmount}"
+						id="exampleInputAmount">
+				</div>
+
+				<hr />
+				<!-- Back & Submit -->
+				<div class="modal-footer">
+					<a th:href="@{'/user/viewTourSponsor/'+${Mid}}">
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Back</button>
+					</a>
+					<button type="submit" class="btn btn-primary">Update</button>
+				</div>
+			</form>
+		</div>
+
 	</section>
 </body>
+
 </html>

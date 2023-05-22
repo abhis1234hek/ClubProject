@@ -2,28 +2,30 @@ package com.pro.club.entities.secA;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
 
 @Entity
 
 public class Address 
 {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column (name="Address Id")
 	private int CAid;
+	@Column (name="Street")
 	private String CStreet;
+	@Column (name="Area")
 	private String CArea;
+	@Column (name="City")
 	private String CCity;
+	@Column (name="State")
 	private String CState;
+	@Column (name="Pincode")
 	private String CPincode;
 	
 	@JsonBackReference

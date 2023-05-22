@@ -1,60 +1,57 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"
-	th:replace="~{base::layout(~{::section})}">
-<head>
-<meta charset="UTF-8" />
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base::layout(~{::section})}">
 
-<title>update match page</title>
+<head>
+	<meta charset="UTF-8" />
+
+	<title>update match page</title>
 </head>
+
 <body>
 	<section>
-			<h1>Update Matches</h1>
-			<div class="p-5">
+		<h1>Update Matches</h1>
+		<div class="p-5">
 			<form th:action="@{'/user/updateMatch/'+${m.Mid}}" method="POST">
 
-											<!--Name of Team A -->
-											<div class="mb-1">
-												<label for="exampleInputEmail1" class="form-label">Team A</label>
-												<input required type="text" class="form-control"
-													name="Mmteama" th:value="${m.Mmteama}" id="exampleInputEmail1"
-													aria-describedby="emailHelp">
-											</div>
-											
-											<!--Name of Team B -->
-											<div class="mb-1">
-												<label for="exampleInputEmail1" class="form-label">Team B</label>
-												<input required type="text" class="form-control"
-													name="Mmteamb" th:value="${m.Mmteamb}" id="exampleInputEmail1"
-													aria-describedby="emailHelp">
-											</div>
-											
-											<!--Match Date -->
-											<div class="mb-1">
-												<label for="exampleInputEmail1" class="form-label">Date</label>
-												<input required type="text" class="form-control"
-													name="Mmdate" th:value="${m.Mmdate}" id="exampleInputEmail1"
-													aria-describedby="emailHelp">
-											</div>
-											
-											<!--Match Place -->
-											<div class="mb-1">
-												<label for="exampleInputEmail1" class="form-label">Place</label>
-												<input required type="text" class="form-control"
-													name="Mmplace" th:value="${m.Mmplace}" id="exampleInputEmail1"
-													aria-describedby="emailHelp">
-											</div>
+				<!--Name of Team A -->
+				<div class="mb-1">
+					<label for="exampleInputTeama" class="form-label">Team A</label>
+					<input required type="text" class="form-control" name="Mmteama" th:value="${m.Mmteama}"
+						id="exampleInputTeama">
+				</div>
 
-											<hr />
-											<!-- Back & Submit -->
-											<div class="modal-footer">
-											<a th:href="@{'/user/viewTourMatches/'+${Mid}}">
-												<button type="button" class="btn btn-secondary"
-													data-bs-dismiss="modal">Back</button>
-											</a>
-												<button type="submit" class="btn btn-primary">Update</button>
-											</div>
-										</form>
-										</div>
+				<!--Name of Team B -->
+				<div class="mb-1">
+					<label for="exampleInputTeamb" class="form-label">Team B</label>
+					<input required type="text" class="form-control" name="Mmteamb" th:value="${m.Mmteamb}"
+						id="exampleInputTeamb">
+				</div>
+
+				<!--Match Date -->
+				<div class="mb-1">
+					<label for="exampleInputDate" class="form-label">Date</label>
+					<input required type="text" class="form-control" name="Mmdate" th:value="${m.Mmdate}"
+						id="exampleInputDate">
+				</div>
+
+				<!--Match Place -->
+				<div class="mb-1">
+					<label for="exampleInputPlace" class="form-label">Place</label>
+					<input required type="text" class="form-control" name="Mmplace" th:value="${m.Mmplace}"
+						id="exampleInputPlace">
+				</div>
+
+				<hr />
+				<!-- Back & Submit -->
+				<div class="modal-footer">
+					<a th:href="@{'/user/viewTourMatches/'+${Mid}}">
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Back</button>
+					</a>
+					<button type="submit" class="btn btn-primary">Update</button>
+				</div>
+			</form>
+		</div>
 	</section>
 </body>
+
 </html>

@@ -1,13 +1,14 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" 
-				th:replace="base::layout(~{::section})">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+
 <head>
-<meta charset="UTF-8" />
-<title>Home page Tournament Show</title>
+	<meta charset="UTF-8" />
+	<title>Home page Tournament Show</title>
 </head>
+
 <body>
 
-<!-- Showing Tournament on Home Page -->
+	<!-- Showing Tournament on Home Page -->
 	<section class="mb-5">
 		<div class="row col-10 mx-auto mt-5">
 			<table class="table">
@@ -24,14 +25,15 @@
 				</thead>
 				<tbody>
 					<tr th:each="t:${tournaments}">
-						<th th:text="'TID_'+${t.Tid}" ></th>
-						<td  th:text="${t.TName}"></td>
-						<td  th:text="${t.TDomain}"></td>
-						<td  th:text="${t.TSDate}"></td>
-						<td  th:text="${t.TEDate}"></td>
+						<th th:text="'TID_'+${t.Tid}"></th>
+						<td th:text="${t.TName}"></td>
+						<td th:text="${t.TDomain}"></td>
+						<td th:text="${t.TSDate}"></td>
+						<td th:text="${t.TEDate}"></td>
 						<td th:text="${t.TPlace}"></td>
 						<td>
-							<div th:each="tm:${t.tmatches}" th:text="'['+${tm.Mmteama} + ' vs ' + ${tm.Mmteamb} + '] on ' + ${tm.Mmdate} "></div>
+							<div th:each="tm:${t.tmatches}"
+								th:text="'['+${tm.Mmteama} + ' vs ' + ${tm.Mmteamb} + '] on ' + ${tm.Mmdate} "></div>
 						</td>
 					</tr>
 				</tbody>
@@ -39,4 +41,5 @@
 		</div>
 	</section>
 </body>
+
 </html>

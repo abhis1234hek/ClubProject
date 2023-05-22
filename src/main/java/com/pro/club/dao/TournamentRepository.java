@@ -6,7 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import com.pro.club.entities.secA.User;
 import com.pro.club.entities.secB.Tournament;
 
 public interface TournamentRepository extends JpaRepository<Tournament, Integer> 
